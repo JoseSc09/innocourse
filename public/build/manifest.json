@@ -1,0 +1,45 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CZgY4QvS.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/images/Logo.jpg": {
+    "file": "assets/Logo-BdyzhONq.jpg",
+    "src": "resources/images/Logo.jpg"
+  },
+  "resources/images/about_img1.jpg": {
+    "file": "assets/about_img1-BCq7e6IR.jpg",
+    "src": "resources/images/about_img1.jpg"
+  },
+  "resources/images/about_img2.jpg": {
+    "file": "assets/about_img2-CSY93ySY.jpg",
+    "src": "resources/images/about_img2.jpg"
+  },
+  "resources/images/about_img3.jpg": {
+    "file": "assets/about_img3-D-j6JIy3.jpg",
+    "src": "resources/images/about_img3.jpg"
+  },
+  "resources/images/about_img4.jpg": {
+    "file": "assets/about_img4-DpO9sdK5.jpg",
+    "src": "resources/images/about_img4.jpg"
+  },
+  "resources/images/about_img5.jpg": {
+    "file": "assets/about_img5-BZGonUJ-.jpg",
+    "src": "resources/images/about_img5.jpg"
+  },
+  "resources/images/about_img6.jpg": {
+    "file": "assets/about_img6-PpbnmmVX.jpg",
+    "src": "resources/images/about_img6.jpg"
+  },
+  "resources/images/about_img7.jpg": {
+    "file": "assets/about_img7-CHSoGzOV.jpg",
+    "src": "resources/images/about_img7.jpg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-ByPpS52I.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Decorativos de medio circulo */
+.circle-first,
+.circle-second,
+.circle-third {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    clip-path: circle(50% at 0%);
+    z-index: -1;
+}
+
+.circle-first {
+    top: 0%;
+    right: 0px;
+    transform: rotate(180deg);
+}
+
+.circle-second {
+    top: 50%;
+    left: 0px;
+}
+
+.circle-third {
+    top: 100%;
+    right: 0px;
+    transform: rotate(180deg);
+}
