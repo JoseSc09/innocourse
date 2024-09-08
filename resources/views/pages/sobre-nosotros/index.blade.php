@@ -62,80 +62,30 @@
                     de calidad, innovadora y relevante. Su enfoque práctico y actualizado asegura el mejor apoyo y
                     orientación para el éxito de nuestros estudiantes.</p>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {{-- CARD PROFESIONAL --}}
-                    <div class="max-w-sm bg-white border border-gray-300 rounded-lg shadow ">
-                        <img class="rounded-t-lg" src="{{ Vite::image('about_img4.jpg') }}" alt="" />
-                        <div class="p-5">
-                            <h5 class="text-2xl font-bold tracking-tight text-gray-900 ">
-                                Carla Casas</h5>
-                            <span class="text-sm text-gray-600 tracking-tight">CEO de la empresa</span>
-                            <p class="my-3 font-normal text-gray-700 ">Curso de Liderazgo</p>
-                            <a href="#"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-                                Ver cursos
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                </svg>
-                            </a>
+                    @foreach($profesores as $profesor)
+
+                        {{-- CARD PROFESIONAL --}}
+                        <div class="max-w-sm bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <img class="rounded-t-lg" src="{{ Vite::image($profesor['foto']) }}" alt="" />
+                            <div class="p-5">
+                                <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                {{ $profesor['nombre'] }}</h5>
+                                <span class="text-sm text-gray-600 tracking-tight dark:text-gray-400">{{ $profesor['cargo'] }}</span>
+                                <p class="my-3 font-normal text-gray-700 dark:text-gray-400">Curso de {{ $profesor['curso'] }}</p>
+                                <a href="#"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Ver cursos
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     {{-- FIN CARD --}}
-                    <div class="max-w-sm bg-white border border-gray-300 rounded-lg shadow ">
-                        <img class="rounded-t-lg" src="{{ Vite::image('about_img5.jpg') }}" alt="" />
-                        <div class="p-5">
-                            <h5 class="text-2xl font-bold tracking-tight text-gray-900 ">
-                                Andres Galicia</h5>
-                            <span class="text-sm text-gray-600 tracking-tight">Ingeniero de base de datos</span>
-                            <p class="my-3 font-normal text-gray-700 ">Curso de Data</p>
-                            <a href="#"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-                                Ver cursos
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="max-w-sm bg-white border border-gray-300 rounded-lg shadow ">
-                        <img class="rounded-t-lg" src="{{ Vite::image('about_img6.jpg') }}" alt="" />
-                        <div class="p-5">
-                            <h5 class="text-2xl font-bold tracking-tight text-gray-900 ">
-                                Luz Lucero</h5>
-                            <span class="text-sm text-gray-600 tracking-tight">Profesional en Back-end</span>
-                            <p class="my-3 font-normal text-gray-700 ">Curso de Backend</p>
-                            <a href="#"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-                                Ver cursos
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="max-w-sm bg-white border border-gray-300 rounded-lg shadow ">
-                        <img class="rounded-t-lg" src="{{ Vite::image('about_img7.jpg') }}" alt="" />
-                        <div class="p-5">
-                            <h5 class="text-2xl font-bold tracking-tight text-gray-900 ">
-                                Juanito PicaPiedra</h5>
-                            <span class="text-sm text-gray-600 tracking-tight">Profesional Front-End</span>
-                            <p class="my-3 font-normal text-gray-700 ">Curso de Diseño UX/UI</p>
-                            <a href="#"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-                                Ver cursos
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                     
                 </div>
 
