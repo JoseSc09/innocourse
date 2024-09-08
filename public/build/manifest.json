@@ -1,8 +1,32 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CZgY4QvS.css",
+    "file": "assets/app-BLEuC9ti.css",
     "src": "resources/css/app.css",
     "isEntry": true
+  },
+  "resources/images/Icon1.jpg": {
+    "file": "assets/Icon1-wNXOWxcI.jpg",
+    "src": "resources/images/Icon1.jpg"
+  },
+  "resources/images/Icon2.jpg": {
+    "file": "assets/Icon2-C6_zIT3K.jpg",
+    "src": "resources/images/Icon2.jpg"
+  },
+  "resources/images/Icon3.jpg": {
+    "file": "assets/Icon3-CcFSYz_m.jpg",
+    "src": "resources/images/Icon3.jpg"
+  },
+  "resources/images/Icon4.jpg": {
+    "file": "assets/Icon4-BI7elyYG.jpg",
+    "src": "resources/images/Icon4.jpg"
+  },
+  "resources/images/Icon5.jpg": {
+    "file": "assets/Icon5-CpkPEvjl.jpg",
+    "src": "resources/images/Icon5.jpg"
+  },
+  "resources/images/Imagen_principal.png": {
+    "file": "assets/Imagen_principal-DSn0iFP6.png",
+    "src": "resources/images/Imagen_principal.png"
   },
   "resources/images/Logo.jpg": {
     "file": "assets/Logo-BdyzhONq.jpg",
@@ -36,8 +60,76 @@
     "file": "assets/about_img7-CHSoGzOV.jpg",
     "src": "resources/images/about_img7.jpg"
   },
+  "resources/images/afp_integra.jpg": {
+    "file": "assets/afp_integra-odEF5F7z.jpg",
+    "src": "resources/images/afp_integra.jpg"
+  },
+  "resources/images/afp_prima.jpg": {
+    "file": "assets/afp_prima-DyMVDi0k.jpg",
+    "src": "resources/images/afp_prima.jpg"
+  },
+  "resources/images/alicorp.jpg": {
+    "file": "assets/alicorp-BVzlSDjN.jpg",
+    "src": "resources/images/alicorp.jpg"
+  },
+  "resources/images/bbva.jpg": {
+    "file": "assets/bbva-DGbHfzII.jpg",
+    "src": "resources/images/bbva.jpg"
+  },
+  "resources/images/img1.jpg": {
+    "file": "assets/img1-DpImAswS.jpg",
+    "src": "resources/images/img1.jpg"
+  },
+  "resources/images/img2.jpg": {
+    "file": "assets/img2-Cl7MJC2B.jpg",
+    "src": "resources/images/img2.jpg"
+  },
+  "resources/images/img3.jpg": {
+    "file": "assets/img3-CGS-ocWy.jpg",
+    "src": "resources/images/img3.jpg"
+  },
+  "resources/images/img4.jpg": {
+    "file": "assets/img4-CHkoCEFX.jpg",
+    "src": "resources/images/img4.jpg"
+  },
+  "resources/images/img5.jpg": {
+    "file": "assets/img5-CKQbIyA3.jpg",
+    "src": "resources/images/img5.jpg"
+  },
+  "resources/images/logocurso.png": {
+    "file": "assets/logocurso-DkVXu3On.png",
+    "src": "resources/images/logocurso.png"
+  },
+  "resources/images/mastercard.png": {
+    "file": "assets/mastercard-CMt8Vn6X.png",
+    "src": "resources/images/mastercard.png"
+  },
+  "resources/images/pagoefectivo.png": {
+    "file": "assets/pagoefectivo-meCPXID-.png",
+    "src": "resources/images/pagoefectivo.png"
+  },
+  "resources/images/stars.png": {
+    "file": "assets/stars-DPQAUpxG.png",
+    "src": "resources/images/stars.png"
+  },
+  "resources/images/user.png": {
+    "file": "assets/user-Csi4vjZh.png",
+    "src": "resources/images/user.png"
+  },
+  "resources/images/visa.png": {
+    "file": "assets/visa--KmmMp9o.png",
+    "src": "resources/images/visa.png"
+  },
+  "resources/images/yape.jpg": {
+    "file": "assets/yape-C9Ve5rk7.jpg",
+    "src": "resources/images/yape.jpg"
+  },
+  "resources/images/yapeplin.png": {
+    "file": "assets/yapeplin-DeAN9-QK.png",
+    "src": "resources/images/yapeplin.png"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-ByPpS52I.js",
+    "file": "assets/app-CAy89vCO.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
