@@ -7,14 +7,14 @@
     </div>
     <div class="images flex flex-col md:max-w-lg">
         <div class="main-image relative">
-            <img src="{{ asset('imagenes/clase_virtual_4(1).jpg') }}" alt="Clase en vivo" class="w-full rounded-lg border-2 border-black">
+        <img src="{{ Vite::image('img1.jpg') }}" alt="Clase en vivo" class="w-full rounded-lg border-2 border-black">
             <div id="tooltip-jessica" class="tooltip absolute top-2 left-0 bg-black text-white p-2 rounded text-sm transform -translate-x-1/2">Jessica 15:31<br>Excelente clase!</div>
             <div id="tooltip-juan" class="tooltip absolute top-8 right-0 bg-black text-white p-2 rounded text-sm w-28 text-left">Juan 15:34<br>Hola profe!, tengo una consulta</div>
         </div>
         <div class="thumbnail-images flex justify-between mt-4">
-            <img src="{{ asset('imagenes/clase_virtual_1.jpg') }}" alt="Estudiante en clase" class="w-1/3 rounded-lg border-2 border-black">
-            <img src="{{ asset('imagenes/clase_virtual_2(2).jpg') }}" alt="Clase en línea" class="w-1/3 rounded-lg border-2 border-black">
-            <img src="{{ asset('imagenes/clase_virtual_3.jpg') }}" alt="Grupo de estudio" class="w-1/3 rounded-lg border-2 border-black">
+        <img src="{{ Vite::image('img2.jpg') }}" alt="Estudiante en clase" class="w-1/3 rounded-lg border-2 border-black">
+        <img src="{{ Vite::image('img3.jpg') }}" alt="Clase en línea" class="w-1/3 rounded-lg border-2 border-black">
+        <img src="{{ Vite::image('img4.jpg') }}" alt="Grupo de estudio" class="w-1/3 rounded-lg border-2 border-black">
         </div>
     </div>
 </section>
@@ -25,10 +25,16 @@
 </section>
 
 <section class="partners-section flex flex-wrap justify-around items-center py-12 bg-white border-b-2 border-gray-300">
-    @foreach (['bbva' => 100, 'yape' => 250, 'alicorp' => 150, 'afp_integra' => 800, 'afp_prima' => 40] as $partner => $graduates)
+@foreach ([
+        'bbva' => ['image' => 'bbva.jpg', 'graduates' => 100],
+        'yape' => ['image' => 'yape.jpg', 'graduates' => 250],
+        'alicorp' => ['image' => 'alicorp.jpg', 'graduates' => 150],
+        'afp_integra' => ['image' => 'afp_integra.jpg', 'graduates' => 800],
+        'afp_prima' => ['image' => 'afp_prima.jpg', 'graduates' => 40]
+    ] as $partner => $data)
         <div class="partner text-center">
-            <img src="{{ asset("imagenes/{$partner}.jpg") }}" alt="{{ ucfirst($partner) }}" class="w-28 h-20 mb-2 border-2 border-black rounded-lg">
-            <p>+{{ $graduates }} graduados</p>
+        <img src="{{ Vite::image($data['image']) }}" alt="{{ ucfirst($partner) }}" class="w-28 h-20 mb-2 border-2 border-black rounded-lg">
+            <p>+{{ $data['graduates'] }} graduados</p>
         </div>
     @endforeach
 </section>
@@ -52,17 +58,17 @@
     <div class="info-grid grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div class="info-text space-y-4">
             @foreach ([
-                ['PlayVideo.jpg', 'Aprende algo nuevo cada 10 minutos'],
-                ['Guia.jpg', 'Te enseñamos con material profesional de principiante a experto'],
-                ['Progreso.jpg', 'Pon a prueba tu progreso de forma interactiva'],
-                ['Descargar.jpg', 'Viabilidad en descargar las clases para volver a visualizar'],
-                ['Check.jpg', 'Visualiza tus logros y metas']
+                ['Icon1.jpg', 'Aprende algo nuevo cada 10 minutos'],
+                ['Icon2.jpg', 'Te enseñamos con material profesional de principiante a experto'],
+                ['Icon3.jpg', 'Pon a prueba tu progreso de forma interactiva'],
+                ['Icon4.jpg', 'Viabilidad en descargar las clases para volver a visualizar'],
+                ['Icon5.jpg', 'Visualiza tus logros y metas']
             ] as $icon)
                 <p class="flex items-center p-4"><img src="{{ asset("iconos/{$icon[0]}") }}" alt="{{ $icon[1] }}" class="mr-4 w-8 h-8">{{ $icon[1] }}</p>
             @endforeach
         </div>
         <div class="info-img">
-            <img src="{{ asset('imagenes/clase_virtual_5.jpg') }}" alt="Instructora dando clase en línea" class="w-full rounded-xl border-3 border-black">
+        <img src="{{ Vite::image($data['image']) }}" alt="Instructora dando clase en línea" class="w-full rounded-xl border-3 border-black">
         </div>
     </div>
 </div>
@@ -89,7 +95,7 @@
                 </div>
                 <div class="yape flex items-center justify-end text-sm text-gray-600">
                     <p>Puedes pagar con</p>
-                    <img src="{{ asset('imagenes/yape.jpg') }}" alt="Yape" class="ml-2 w-10 rounded">
+                    <img src="{{ Vite::image('yape.jpg') }}" alt="Yape" class="ml-2 w-10 rounded">
                 </div>
             </div>
         @endforeach
