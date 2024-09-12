@@ -64,7 +64,7 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     @foreach($profesores as $profesor)
 
-                        {{-- CARD PROFESIONAL --}}
+                        
                         <div class="max-w-sm bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                             <img class="rounded-t-lg" src="{{ Vite::image($profesor['foto']) }}" alt="" />
                             <div class="p-5">
@@ -83,7 +83,7 @@
                                 </a>
                             </div>
                         </div>
-                    {{-- FIN CARD --}}
+                    
                     @endforeach
                     
                     
