@@ -6,23 +6,11 @@ import.meta.glob([
   '../fonts/**',
 ]);
 
+/* Añade la clase dark a la etiqueta html para el modo escuro */
 document.getElementById('night-mode-toggle').addEventListener('click', function () {
   document.documentElement.classList.toggle('dark');
 });
 
-
-/* Acordeon-opiniones */
-document.addEventListener('DOMContentLoaded', function () {
-  const accordions = document.querySelectorAll('.accordion .p-5');
-
-  accordions.forEach(acc => {
-      acc.addEventListener('click', function () {
-          const content = this.nextElementSibling;
-          content.classList.toggle('hidden');
-          this.querySelector('svg').classList.toggle('rotate-180');
-      });
-  });
-});
 
 /* Js Cursos */
 function filterCourses() {
@@ -45,12 +33,47 @@ function filterCourses() {
   });
 }
 
-/*Opiniones */
-document.querySelectorAll('.accordion .contentrBx .label').forEach(label => {
-    label.addEventListener('click', function() {
-        const contentrBx = this.parentElement;
-        
-        // Toggle the active class on the clicked item
-        contentrBx.classList.toggle('active');
-    });
+
+/* Acordeon-opiniones */
+document.querySelectorAll('.accordion .contentrBx').forEach(contentrBx => {
+  const label = contentrBx.querySelector('.label');
+  const content = contentrBx.querySelector('.content');
+  const plusSign = contentrBx.querySelector('.plus-sign');
+  const minusSign = contentrBx.querySelector('.minus-sign');
+
+  label.addEventListener('click', function() {
+      const isActive = contentrBx.classList.contains('active');
+
+      document.querySelectorAll('.accordion .contentrBx').forEach(otherContentrBx => {
+          if (otherContentrBx !== contentrBx) {
+              otherContentrBx.classList.remove('active');
+              otherContentrBx.querySelector('.content').style.maxHeight = null;
+              otherContentrBx.querySelector('.plus-sign').classList.remove('hidden');
+              otherContentrBx.querySelector('.minus-sign').classList.add('hidden');
+          }
+      });
+
+      if (isActive) {
+          contentrBx.classList.remove('active');
+          content.style.maxHeight = null;
+          plusSign.classList.remove('hidden');
+          minusSign.classList.add('hidden');
+      } else {
+          contentrBx.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          plusSign.classList.add('hidden');
+          minusSign.classList.remove('hidden');
+      }
+  });
+});
+
+//Header Responsive
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", function () {
+      navMenu.classList.toggle("hidden");
+      navMenu.classList.toggle("flex");
+  });
 });
