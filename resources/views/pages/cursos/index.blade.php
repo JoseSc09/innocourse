@@ -48,114 +48,17 @@
             </select>
         </div>
 
-        <div class="courses-list">
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/DesarrolloWeb.png" alt="Imagen del curso">
-                <h2>Curso de Desarrollo Web</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
+       <div class="courses-list">
+       @foreach($cursos as $curso)
+        <div class="course-card">
+                <img src="{{ Vite::image($curso['img'])}}" alt="Imagen del curso">
+                <h2>{{$curso['nombre']}}</h2>
+                <p>{{$curso['descrip']}}</p>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 180.00</div>
-                <a href="../Cursos/Desarrollo_Web.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/Back-end.png" alt="Imagen del curso">
-                <h2>Curso de Back-end</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="../Cursos/Back_End.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/InteligenciaArtificial.png" alt="Imagen del curso">
-                <h2>Curso de Inteligencia Artificial</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="../Cursos/Inteligencia_Artificial.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/DataScience.png" alt="Imagen del curso">
-                <h2>Curso de Data Science</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/MarketingDigital.png" alt="Imagen del curso">
-                <h2>Curso de Marketing Digital</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/Blender.png" alt="Imagen del curso">
-                <h2>Curso de Blender</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/Ingles.png" alt="Imagen del curso">
-                <h2>Curso de Ingles Avanzado</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/MySQL.png" alt="Imagen del curso">
-                <h2>Curso de MySQL</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="/Iconos/Curso-Dia/Python.png" alt="Imagen del curso">
-                <h2>Curso de Python</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="../Iconos/Curso-Dia/metodologia_agil.png" alt="Imagen del curso">
-                <h2>Curso de Metodologías Ágiles</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="../Iconos/Curso-Dia/redes_telecomu.png" alt="Imagen del curso">
-                <h2>Curso de Redes y Telecomunicaciones</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
-
-            <div class="course-card">
-                <img src="../Iconos/Curso-Dia/E_commerce.png" alt="Imagen del curso">
-                <h2>Curso de E-commerce</h2>
-                <p>2 clases de prueba en tu primer curso!</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ 99.99</div>
-                <a href="Metodo_Pago.html" class="enroll-button">Inscribete!</a>
-            </div>
+                <div class="price">S/ {{$curso['precio']}}</div>
+                <a href="https://9000-idx-innocourse-1724657250495.cluster-duylic2g3fbzerqpzxxbw6helm.cloudworkstations.dev/pagos?monospaceUid=989539&embedded=0" class="enroll-button">Inscribete!</a>
+        </div>
+        @endforeach           
         </div>
     </section>
 </x-app-layout>
