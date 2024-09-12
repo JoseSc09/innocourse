@@ -1,28 +1,56 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BLEuC9ti.css",
+    "file": "assets/app-CnYDZEP3.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/images/Icon1.jpg": {
-    "file": "assets/Icon1-wNXOWxcI.jpg",
-    "src": "resources/images/Icon1.jpg"
+  "resources/images/Curso-back-end.png": {
+    "file": "assets/Curso-back-end-B1RbfKAq.png",
+    "src": "resources/images/Curso-back-end.png"
   },
-  "resources/images/Icon2.jpg": {
-    "file": "assets/Icon2-C6_zIT3K.jpg",
-    "src": "resources/images/Icon2.jpg"
+  "resources/images/Curso-base-de-datos.png": {
+    "file": "assets/Curso-base-de-datos-BChj0c6X.png",
+    "src": "resources/images/Curso-base-de-datos.png"
   },
-  "resources/images/Icon3.jpg": {
-    "file": "assets/Icon3-CcFSYz_m.jpg",
-    "src": "resources/images/Icon3.jpg"
+  "resources/images/Curso-blender.png": {
+    "file": "assets/Curso-blender-CMWb9rni.png",
+    "src": "resources/images/Curso-blender.png"
   },
-  "resources/images/Icon4.jpg": {
-    "file": "assets/Icon4-BI7elyYG.jpg",
-    "src": "resources/images/Icon4.jpg"
+  "resources/images/Curso-contenido-digital.png": {
+    "file": "assets/Curso-contenido-digital-rQSXbASQ.png",
+    "src": "resources/images/Curso-contenido-digital.png"
   },
-  "resources/images/Icon5.jpg": {
-    "file": "assets/Icon5-CpkPEvjl.jpg",
-    "src": "resources/images/Icon5.jpg"
+  "resources/images/Curso-data-science.png": {
+    "file": "assets/Curso-data-science-DkKLP9LM.png",
+    "src": "resources/images/Curso-data-science.png"
+  },
+  "resources/images/Curso-desarrollo-web.png": {
+    "file": "assets/Curso-desarrollo-web-COQtlSY2.png",
+    "src": "resources/images/Curso-desarrollo-web.png"
+  },
+  "resources/images/Curso-hacking-etico.png": {
+    "file": "assets/Curso-hacking-etico-BE2JsE8t.png",
+    "src": "resources/images/Curso-hacking-etico.png"
+  },
+  "resources/images/Curso-ingles.png": {
+    "file": "assets/Curso-ingles-BPnGUYXH.png",
+    "src": "resources/images/Curso-ingles.png"
+  },
+  "resources/images/Curso-inteligencia-artificial.png": {
+    "file": "assets/Curso-inteligencia-artificial-oJ2wMfD8.png",
+    "src": "resources/images/Curso-inteligencia-artificial.png"
+  },
+  "resources/images/Curso-liderazgo.png": {
+    "file": "assets/Curso-liderazgo-_I-T9aYM.png",
+    "src": "resources/images/Curso-liderazgo.png"
+  },
+  "resources/images/Curso-marketing-digital.png": {
+    "file": "assets/Curso-marketing-digital-BKHXqbdL.png",
+    "src": "resources/images/Curso-marketing-digital.png"
+  },
+  "resources/images/Curso-python.png": {
+    "file": "assets/Curso-python-Bf1Plb0A.png",
+    "src": "resources/images/Curso-python.png"
   },
   "resources/images/Imagen_principal.png": {
     "file": "assets/Imagen_principal-DSn0iFP6.png",
@@ -76,25 +104,45 @@
     "file": "assets/bbva-DGbHfzII.jpg",
     "src": "resources/images/bbva.jpg"
   },
-  "resources/images/img1.jpg": {
-    "file": "assets/img1-DpImAswS.jpg",
-    "src": "resources/images/img1.jpg"
+  "resources/images/claseVirtual1.jpg": {
+    "file": "assets/claseVirtual1-DpImAswS.jpg",
+    "src": "resources/images/claseVirtual1.jpg"
   },
-  "resources/images/img2.jpg": {
-    "file": "assets/img2-Cl7MJC2B.jpg",
-    "src": "resources/images/img2.jpg"
+  "resources/images/claseVirtual2.jpg": {
+    "file": "assets/claseVirtual2-Cl7MJC2B.jpg",
+    "src": "resources/images/claseVirtual2.jpg"
   },
-  "resources/images/img3.jpg": {
-    "file": "assets/img3-CGS-ocWy.jpg",
-    "src": "resources/images/img3.jpg"
+  "resources/images/claseVirtual3.jpg": {
+    "file": "assets/claseVirtual3-CGS-ocWy.jpg",
+    "src": "resources/images/claseVirtual3.jpg"
   },
-  "resources/images/img4.jpg": {
-    "file": "assets/img4-CHkoCEFX.jpg",
-    "src": "resources/images/img4.jpg"
+  "resources/images/claseVirtual4.jpg": {
+    "file": "assets/claseVirtual4-CHkoCEFX.jpg",
+    "src": "resources/images/claseVirtual4.jpg"
   },
-  "resources/images/img5.jpg": {
-    "file": "assets/img5-CKQbIyA3.jpg",
-    "src": "resources/images/img5.jpg"
+  "resources/images/cursoInfo.jpg": {
+    "file": "assets/cursoInfo-CKQbIyA3.jpg",
+    "src": "resources/images/cursoInfo.jpg"
+  },
+  "resources/images/iconInfo1.jpg": {
+    "file": "assets/iconInfo1-wNXOWxcI.jpg",
+    "src": "resources/images/iconInfo1.jpg"
+  },
+  "resources/images/iconInfo2.jpg": {
+    "file": "assets/iconInfo2-C6_zIT3K.jpg",
+    "src": "resources/images/iconInfo2.jpg"
+  },
+  "resources/images/iconInfo3.jpg": {
+    "file": "assets/iconInfo3-CcFSYz_m.jpg",
+    "src": "resources/images/iconInfo3.jpg"
+  },
+  "resources/images/iconInfo4.jpg": {
+    "file": "assets/iconInfo4-BI7elyYG.jpg",
+    "src": "resources/images/iconInfo4.jpg"
+  },
+  "resources/images/iconInfo5.jpg": {
+    "file": "assets/iconInfo5-CpkPEvjl.jpg",
+    "src": "resources/images/iconInfo5.jpg"
   },
   "resources/images/logocurso.png": {
     "file": "assets/logocurso-DkVXu3On.png",
@@ -129,7 +177,7 @@
     "src": "resources/images/yapeplin.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CAy89vCO.js",
+    "file": "assets/app-BUZ8MASz.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
