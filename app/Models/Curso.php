@@ -10,4 +10,12 @@ class Curso extends Model
     use HasFactory;
 
     protected $table = 'cursos';
+
+    public function instructor(){
+        return $this->hasOne(Usuario::class,'instructor_id','usuario_id');
+    }
+
+    public function categoria(){
+        return $this->hasOne(Categoria::class,'categoria_id','categoria_id');
+    }
 }

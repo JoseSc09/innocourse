@@ -56,11 +56,11 @@
                 <div class="curso p-6 rounded-lg hover:bg-purple-200 transition cursor-pointer border border-black"
                     style="background-color: rgba(151, 99, 246, 0.1);">
                     <span class="block text-lg">Curso de</span>
-                    <span class="block text-2xl font-bold mt-2">⭐ {{ $curso['name'] }}</span>
+                    <span class="block text-2xl font-bold mt-2">⭐ {{ $curso->titulo }}</span>
                 </div>
             @endforeach
         </div>
-        <a href="https://9000-idx-innocourse-1724657250495.cluster-duylic2g3fbzerqpzxxbw6helm.cloudworkstations.dev/cursos?monospaceUid=989539&embedded=0"
+        <a href="{{ route('courses.index') }}"
             class="ver-cursos-btn inline-block px-6 py-3 bg-orange-400 text-black border-2 border-black rounded-full font-semibold transition hover:bg-orange-500 mt-8">Ver
             todos los cursos</a>
     </div>
