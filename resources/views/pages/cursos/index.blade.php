@@ -51,11 +51,11 @@
        <div class="courses-list">
        @foreach($cursos as $curso)
         <div class="course-card">
-                <img src="{{ Vite::image($curso['img'])}}" alt="Imagen del curso">
-                <h2>{{$curso['nombre']}}</h2>
-                <p>{{$curso['descrip']}}</p>
+                <img src="{{ asset($curso->imagen) }}" alt="Imagen del curso">
+                <h2>{{$curso->titulo}}</h2>
+                <p>{{$curso->descripcion}}</p>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ {{$curso['precio']}}</div>
+                <div class="price">S/ {{$curso->precio}}</div>
                 <a href="https://9000-idx-innocourse-1724657250495.cluster-duylic2g3fbzerqpzxxbw6helm.cloudworkstations.dev/pagos?monospaceUid=989539&embedded=0" class="enroll-button">Inscribete!</a>
         </div>
         @endforeach           
