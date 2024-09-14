@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Curso;
 
 class HomeController extends Controller
 {
@@ -37,26 +38,7 @@ class HomeController extends Controller
             ],
         ];
         
-        $cursos = [
-            [
-                'name' => 'Desarrollo Web',
-            ],
-            [
-                'name' => 'Diseño UX/UI',
-            ],
-            [
-                'name' => 'JavaScript',
-            ],
-            [
-                'name' => 'Metodologías Ágiles',
-            ],
-            [
-                'name' => 'Base de Datos',
-            ],
-            [
-                'name' => 'Phyton',
-            ],
-        ];
+        $cursos = Curso::all();
 
         $iconos = [
             [
