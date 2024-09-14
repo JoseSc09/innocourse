@@ -16,7 +16,6 @@ class CursoSeeder extends Seeder
         //
         $curso = new Curso();
         $curso->titulo = 'JavaScript';
-        $curso->imagen = 'storage/imagenes/iconInfo1.jpg';
         $curso->descripcion = 'Aprende JS este 2024';
         $curso->precio = 48;
         $curso->instructor_id = 2;
@@ -25,7 +24,6 @@ class CursoSeeder extends Seeder
         
         $curso = new Curso();
         $curso->titulo = 'Desarrollo Web';
-        $curso->imagen = 'storage/imagenes/iconInfo1.jpg';
         $curso->descripcion = 'Aprende las ultimas tecnologias para crear tu propia página';
         $curso->precio = 78;
         $curso->instructor_id = 2;
@@ -34,7 +32,6 @@ class CursoSeeder extends Seeder
 
         $curso = new Curso();
         $curso->titulo = 'Diseño UX/UI';
-        $curso->imagen = 'storage/imagenes/iconInfo1.jpg';
         $curso->descripcion = 'Aprende JS este 2024';
         $curso->precio = 48;
         $curso->instructor_id = 2;
@@ -43,7 +40,6 @@ class CursoSeeder extends Seeder
 
         $curso = new Curso();
         $curso->titulo = 'Metodologías Ágiles';
-        $curso->imagen = 'storage/imagenes/iconInfo1.jpg';
         $curso->descripcion = 'Aprende JS este 2024';
         $curso->precio = 48;
         $curso->instructor_id = 2;
@@ -52,7 +48,6 @@ class CursoSeeder extends Seeder
 
         $curso = new Curso();
         $curso->titulo = 'Base de datos';
-        $curso->imagen = 'storage/imagenes/iconInfo1.jpg';
         $curso->descripcion = 'Aprende JS este 2024';
         $curso->precio = 48;
         $curso->instructor_id = 2;
@@ -61,7 +56,6 @@ class CursoSeeder extends Seeder
 
         $curso = new Curso();
         $curso->titulo = 'Python';
-        $curso->imagen = 'storage/imagenes/iconInfo1.jpg';
         $curso->descripcion = 'Aprende JS este 2024';
         $curso->precio = 48;
         $curso->instructor_id = 2;

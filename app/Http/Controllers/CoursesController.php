@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Curso;
 use Illuminate\Http\Request;
-
 
 class CoursesController extends Controller
 {
     public function index(){
-       /* $cursos = [
+        $cursos = [
             [
                 'nombre' => 'Curso Desarrollo Web',
                 'descrip' => '2 clases de prueba en tu primer curso!',
@@ -94,12 +92,7 @@ class CoursesController extends Controller
                 'precio' => '99.99',
                 'rating' => '8/10'
             ],
-        ];*/
-
-
-        $cursos = Curso::all();
-
-
+        ];
         return view('pages.cursos.index',compact('cursos'));
     }
 }
