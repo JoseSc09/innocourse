@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class OpinionsController extends Controller
@@ -59,39 +60,7 @@ class OpinionsController extends Controller
             ],  
         ];
 
-        $preguntas = [
-            [
-                'pregunta' => '¿Qué es InnoCourse?',
-                'respuesta' => 'InnoCourse es una plataforma educativa dedicada a ofrecer cursos innovadores y de
-                            alta calidad para el desarrollo personal y profesional.',
-            ],
-            [
-                'pregunta' => '¿Qué tipo de cursos ofrecen?',
-                'respuesta' => 'Ofrecemos una amplia variedad de cursos en áreas como tecnología, negocios,
-                        desarrollo personal, y más. Todos nuestros cursos están diseñados para ser prácticos y
-                        relevantes.',
-            ],
-            [
-                'pregunta' => '¿Los cursos son en línea o presenciales?',
-                'respuesta' => 'Todos nuestros cursos son completamente en línea, lo que permite a nuestros
-                        estudiantes aprender a su propio ritmo y desde cualquier lugar.',
-            ],
-            [
-                'pregunta' => '¿Ofrecen certificados al completar los cursos?',
-                'respuesta' => 'Sí, al completar exitosamente un curso, recibirás un certificado de finalización
-                        que puedes agregar a tu currículum o perfil profesional.',
-            ],
-            [
-                'pregunta' => '¿Ofrecen algún tipo de apoyo o tutoría durante los cursos?',
-                'respuesta' => 'Sí, nuestros instructores y el equipo de soporte están disponibles para ayudarte
-                        con cualquier duda o problema que puedas tener durante tu aprendizaje.',
-            ],
-            [
-                'pregunta' => '¿Qué métodos de pago aceptan?',
-                'respuesta' => 'Aceptamos varias formas de pago, incluyendo tarjetas de crédito, PayPal y
-                        transferencias bancarias. Los detalles completos están disponibles en el proceso de inscripción.',
-            ],
-        ];
-        return view('pages.opiniones.index', compact('opiniones','preguntas'));
+        $faqs = Faq::all();
+        return view('pages.opiniones.index', compact('opiniones','faqs'));
     }
 }

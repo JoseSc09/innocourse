@@ -56,18 +56,18 @@
         <h2 class="pregunta-titulo text-xl text-center bg-white dark:bg-[#171C2F] py-2 dark:text-[#faf1f1]">Preguntas
             Frecuentes</h2>
         <div class="accordion w-full">
-            @foreach ($preguntas as $pregunta)
+            @foreach ($faqs as $faq)
                     <!-- PREGUNTAS -->
                 <div class="contentrBx relative mb-2">
                     <div
                         class="label bg-[#171C2F] text-white cursor-pointer p-4 text-lg dark:bg-[#FFB263] dark:text-black flex items-center justify-between">
-                        {{ $pregunta['pregunta'] }}
+                        {{ $faq->pregunta }}
                         <span class="plus-sign text-2xl transition-opacity duration-300">+</span>
                         <span class="minus-sign text-2xl hidden transition-opacity duration-300">-</span>
                     </div>
                     <div
                         class="content overflow-hidden transition-max-height duration-500 ease-in-out max-h-0 bg-white dark:bg-[#171C2F] text-black dark:text-[#faf1f1]">
-                        <p class="p-4">{{ $pregunta['respuesta'] }}</p>
+                        <p class="p-4">{{ $faq->respuesta }}</p>
                     </div>
                 </div>
             @endforeach
