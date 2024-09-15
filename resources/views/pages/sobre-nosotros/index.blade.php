@@ -23,7 +23,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
                 <div class="lg:col-start-3 md:col-start-2 md:row-start-1 rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ Vite::image('about_img2.jpg') }}"
+                    <img class="h-72 w-full object-cover object-center" src="{{ Vite::image('about_mision.jpg') }}"
                         alt="Imagen de misión">
                 </div>
                 <div class="lg:col-span-2 flex flex-col justify-around md:col-start-1">
@@ -39,7 +39,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
                 <div class="rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ Vite::image('about_img3.jpg') }}"
+                    <img class="h-72 w-full object-cover object-center" src="{{ Vite::image('about_vision.jpg') }}"
                         alt="Imagen de visión">
                 </div>
                 <div class="lg:col-span-2 flex flex-col justify-around">
@@ -62,16 +62,16 @@
                     de calidad, innovadora y relevante. Su enfoque práctico y actualizado asegura el mejor apoyo y
                     orientación para el éxito de nuestros estudiantes.</p>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    @foreach($profesores as $profesor)
+                    @foreach($cursos as $curso)
 
                         
                         <div class="max-w-sm bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="rounded-t-lg" src="{{ Vite::image($profesor['foto']) }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset($curso->instructor->imagen) }}" alt="" />
                             <div class="p-5">
                                 <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                {{ $profesor['nombre'] }}</h5>
-                                <span class="text-sm text-gray-600 tracking-tight dark:text-gray-400">{{ $profesor['cargo'] }}</span>
-                                <p class="my-3 font-normal text-gray-700 dark:text-gray-400">Curso de {{ $profesor['curso'] }}</p>
+                                {{ $curso->instructor->nombre . ' '.$curso->instructor->apellido }}</h5>
+                                <span class="text-sm text-gray-600 tracking-tight dark:text-gray-400">{{ $curso->nombre }}</span>
+                                <p class="my-3 font-normal text-gray-700 dark:text-gray-400">Curso {{ $curso->titulo }}</p>
                                 <a href="#"
                                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                     Ver cursos
