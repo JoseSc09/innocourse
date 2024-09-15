@@ -11,11 +11,14 @@ class Curso extends Model
 
     protected $table = 'cursos';
 
-    public function instructor(){
-        return $this->hasOne(Usuario::class,'instructor_id','usuario_id');
+    // Relación con la tabla "usuarios" (instructor -> usuario)
+    public function instructor()
+    {
+        return $this->belongsTo(Usuario::class, 'instructor_id', 'usuario_id');
     }
 
+    // Relación con la tabla "categorias"
     public function categoria(){
-        return $this->hasOne(Categoria::class,'categoria_id','categoria_id');
+        return $this->belongsTo(Categoria::class,'categoria_id','categoria_id');
     }
 }

@@ -12,6 +12,6 @@ class Usuario extends Model
     protected $table = 'usuarios';
 
     public function rol(){
-        return $this->hasOne(Rol::class,'rol_id','rol_id');
+        return $this->belongsTo(Rol::class,'rol_id','rol_id');
     }
 }

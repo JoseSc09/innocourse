@@ -1,56 +1,8 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CnYDZEP3.css",
+    "file": "assets/app-wmqG4lTy.css",
     "src": "resources/css/app.css",
     "isEntry": true
-  },
-  "resources/images/Curso-back-end.png": {
-    "file": "assets/Curso-back-end-B1RbfKAq.png",
-    "src": "resources/images/Curso-back-end.png"
-  },
-  "resources/images/Curso-base-de-datos.png": {
-    "file": "assets/Curso-base-de-datos-BChj0c6X.png",
-    "src": "resources/images/Curso-base-de-datos.png"
-  },
-  "resources/images/Curso-blender.png": {
-    "file": "assets/Curso-blender-CMWb9rni.png",
-    "src": "resources/images/Curso-blender.png"
-  },
-  "resources/images/Curso-contenido-digital.png": {
-    "file": "assets/Curso-contenido-digital-rQSXbASQ.png",
-    "src": "resources/images/Curso-contenido-digital.png"
-  },
-  "resources/images/Curso-data-science.png": {
-    "file": "assets/Curso-data-science-DkKLP9LM.png",
-    "src": "resources/images/Curso-data-science.png"
-  },
-  "resources/images/Curso-desarrollo-web.png": {
-    "file": "assets/Curso-desarrollo-web-COQtlSY2.png",
-    "src": "resources/images/Curso-desarrollo-web.png"
-  },
-  "resources/images/Curso-hacking-etico.png": {
-    "file": "assets/Curso-hacking-etico-BE2JsE8t.png",
-    "src": "resources/images/Curso-hacking-etico.png"
-  },
-  "resources/images/Curso-ingles.png": {
-    "file": "assets/Curso-ingles-BPnGUYXH.png",
-    "src": "resources/images/Curso-ingles.png"
-  },
-  "resources/images/Curso-inteligencia-artificial.png": {
-    "file": "assets/Curso-inteligencia-artificial-oJ2wMfD8.png",
-    "src": "resources/images/Curso-inteligencia-artificial.png"
-  },
-  "resources/images/Curso-liderazgo.png": {
-    "file": "assets/Curso-liderazgo-_I-T9aYM.png",
-    "src": "resources/images/Curso-liderazgo.png"
-  },
-  "resources/images/Curso-marketing-digital.png": {
-    "file": "assets/Curso-marketing-digital-BKHXqbdL.png",
-    "src": "resources/images/Curso-marketing-digital.png"
-  },
-  "resources/images/Curso-python.png": {
-    "file": "assets/Curso-python-Bf1Plb0A.png",
-    "src": "resources/images/Curso-python.png"
   },
   "resources/images/Imagen_principal.png": {
     "file": "assets/Imagen_principal-DSn0iFP6.png",
@@ -64,29 +16,13 @@
     "file": "assets/about_img1-BCq7e6IR.jpg",
     "src": "resources/images/about_img1.jpg"
   },
-  "resources/images/about_img2.jpg": {
-    "file": "assets/about_img2-CSY93ySY.jpg",
-    "src": "resources/images/about_img2.jpg"
+  "resources/images/about_mision.jpg": {
+    "file": "assets/about_mision-CSY93ySY.jpg",
+    "src": "resources/images/about_mision.jpg"
   },
-  "resources/images/about_img3.jpg": {
-    "file": "assets/about_img3-D-j6JIy3.jpg",
-    "src": "resources/images/about_img3.jpg"
-  },
-  "resources/images/about_img4.jpg": {
-    "file": "assets/about_img4-DpO9sdK5.jpg",
-    "src": "resources/images/about_img4.jpg"
-  },
-  "resources/images/about_img5.jpg": {
-    "file": "assets/about_img5-BZGonUJ-.jpg",
-    "src": "resources/images/about_img5.jpg"
-  },
-  "resources/images/about_img6.jpg": {
-    "file": "assets/about_img6-PpbnmmVX.jpg",
-    "src": "resources/images/about_img6.jpg"
-  },
-  "resources/images/about_img7.jpg": {
-    "file": "assets/about_img7-CHSoGzOV.jpg",
-    "src": "resources/images/about_img7.jpg"
+  "resources/images/about_vision.jpg": {
+    "file": "assets/about_vision-D-j6JIy3.jpg",
+    "src": "resources/images/about_vision.jpg"
   },
   "resources/images/afp_integra.jpg": {
     "file": "assets/afp_integra-odEF5F7z.jpg",
@@ -177,7 +113,7 @@
     "src": "resources/images/yapeplin.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BUZ8MASz.js",
+    "file": "assets/app-Dr55PrPu.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

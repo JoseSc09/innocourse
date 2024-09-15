@@ -2,38 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Curso;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AboutController extends Controller
 {
     //
-    public function index(){
-        $profesores = [
-            [
-                'nombre' => 'Carla Casas',
-                'cargo' => 'CEO de la empresa',
-                'curso' => 'Liderazgo',
-                'foto' => 'about_img4.jpg',
-            ],
-            [
-                'nombre' => 'Andres Galicia',
-                'cargo' => 'Ingeniero de base de datos',
-                'curso' => 'Data',
-                'foto' => 'about_img5.jpg',
-            ],
-            [
-                'nombre' => 'Luz Lucero',
-                'cargo' => 'Profesional en Back-end',
-                'curso' => 'Backend',
-                'foto' => 'about_img6.jpg',
-            ],
-            [
-                'nombre' => 'Juanito PicaPiedra',
-                'cargo' => 'Profesional Front-End',
-                'curso' => 'Diseño UX/UI',
-                'foto' => 'about_img7.jpg',
-            ],
-        ];
-        return view('pages.sobre-nosotros.index',compact('profesores'));
+    public function index()
+    {
+        //trae toda la informacion del curso con su instructor, pero no se repiten los instructores
+        $subquery = Curso::select('instructor_id', DB::raw('MIN(curso_id) as curso_id'))
+            ->groupBy('instructor_id');
+
+        $cursos = Curso::joinSub($subquery, 'subquery', function ($join) {
+            $join->on('cursos.curso_id', '=', 'subquery.curso_id');
+        })
+            ->with('instructor')
+            ->get();
+            
+        return view('pages.sobre-nosotros.index', compact('cursos'));
     }
 }
