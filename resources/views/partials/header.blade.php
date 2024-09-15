@@ -29,7 +29,7 @@
     
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 w-full md:w-auto">
             <input class="rounded-full p-2 w-full md:w-48 text-black focus:outline-none" type="text" placeholder="Buscar...">
-            <button id="night-mode-toggle" class="md:ml-4">🌓</button>
+            <button id="dark-mode-toggle" class="md:ml-4">🌓</button>
             <button class="rounded-full text-white bg-purple-500 px-5 py-2 hover:bg-purple-600 transition-colors duration-300 w-full md:w-auto" type="button" href="{{ route('login.index') }}">Iniciar Sesión</button>
         </div>
     </nav>
