@@ -6,9 +6,31 @@ import.meta.glob([
   '../fonts/**',
 ]);
 
-/* Añade la clase dark a la etiqueta html para el modo escuro */
-document.getElementById('night-mode-toggle').addEventListener('click', function () {
-  document.documentElement.classList.toggle('dark');
+document.addEventListener('DOMContentLoaded', () => {
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const html = document.documentElement; // Cambia a document.documentElement
+
+  // Función para aplicar el modo oscuro
+  const applyDarkMode = (isDarkMode) => {
+    if (isDarkMode) {
+      html.classList.add('dark'); // Cambia a html
+    } else {
+      html.classList.remove('dark'); // Cambia a html
+    }
+  };
+
+  // Verifica la preferencia guardada en localStorage
+  const darkMode = localStorage.getItem('dark-mode') === 'true';
+  applyDarkMode(darkMode);
+
+  // Maneja el cambio de modo oscuro
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      const isDarkMode = !html.classList.contains('dark'); // Cambia a html
+      applyDarkMode(isDarkMode);
+      localStorage.setItem('dark-mode', isDarkMode);
+    });
+  }
 });
 
 
