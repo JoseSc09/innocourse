@@ -38,8 +38,6 @@ class HomeController extends Controller
             ],
         ];
         
-        $cursos = Curso::all();
-
         $iconos = [
             [
                 'image' => 'iconInfo1.jpg',
@@ -81,6 +79,7 @@ class HomeController extends Controller
             ], 
         ];
         
+        $cursos = Curso::take(6)->get();
         return view('index', compact('empresas','cursos','iconos','memberships'));
     }
 }
