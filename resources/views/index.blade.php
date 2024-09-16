@@ -90,20 +90,20 @@
     <div class="container mx-auto py-12 px-4 bg-white">
         <h1 class="text-center text-3xl font-bold mb-8">¡Elige una de nuestras promociones!</h1>
         <div class="promo-box-container flex flex-wrap justify-center">
-            @foreach ($memberships as $promo)
+            @foreach ($suscripciones as $promo)
                 <div class="promo-box w-full sm:w-80 p-6 m-4 rounded-lg shadow-lg bg-gray-50 border border-gray-200"
                     style="background-color: rgba(151, 99, 246, 0.1);">
                     <div class="promo-header mb-4">
                         <div class="promo-type text-sm text-gray-600">Suscripción</div>
-                        <div class="promo-title text-2xl font-bold text-black">{{ $promo['tipo'] }}</div>
+                        <div class="promo-title text-2xl font-bold text-black">{{ $promo->nombre_suscripcion }}</div>
                     </div>
                     <div class="promo-price text-xl text-gray-700 mb-4">
-                        <span>S/</span><span class="amount text-4xl font-bold">{{ $promo['precio'] }}</span><span>
+                        <span>S/</span><span class="amount text-4xl font-bold">{{ $promo->precio }}</span><span>
                             Soles</span>
-                        <span class="promo-duration block text-sm text-gray-600">{{ $promo['duracion'] }}</span>
+                        <span class="promo-duration block text-sm text-gray-600"> {{ $promo->num_cursos }} Curso de {{ $promo->duracion_meses }} meses</span>
                     </div>
                     <div class="promo-description text-sm text-gray-600 mb-6">
-                        Se parte del curso y aprende muchos fundamentos claves para tu vida profesional!.
+                        {{ $promo->descripcion }}
                     </div>
                     <div class="yape flex items-center justify-end text-sm text-gray-600">
                         <p>Puedes pagar con</p>

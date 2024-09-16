@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Curso;
+use App\Models\Suscripcion;
 
 class HomeController extends Controller
 {
@@ -61,25 +62,9 @@ class HomeController extends Controller
             ],
         ];
         
-        $memberships = [
-            [
-                'tipo' => 'Pruebita',
-                'precio' => 70,
-                'duracion' => 'Curso de 4 meses',
-            ], 
-            [
-                'tipo' => 'Achorado',
-                'precio' => 125,
-                'duracion' => '2 Curso de 4 meses',
-            ], 
-            [
-                'tipo' => 'Opulencia',
-                'precio' => 180,
-                'duracion' => '3 Curso de 4 meses',
-            ], 
-        ];
+        $suscripciones = Suscripcion::all();
         
         $cursos = Curso::take(6)->get();
-        return view('index', compact('empresas','cursos','iconos','memberships'));
+        return view('index', compact('empresas','cursos','iconos','suscripciones'));
     }
 }
