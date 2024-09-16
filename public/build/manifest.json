@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-wmqG4lTy.css",
+    "file": "assets/app-Wg7V6Rb2.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -95,10 +95,6 @@
   "resources/images/stars.png": {
     "file": "assets/stars-DPQAUpxG.png",
     "src": "resources/images/stars.png"
-  },
-  "resources/images/user.png": {
-    "file": "assets/user-Csi4vjZh.png",
-    "src": "resources/images/user.png"
   },
   "resources/images/visa.png": {
     "file": "assets/visa--KmmMp9o.png",
