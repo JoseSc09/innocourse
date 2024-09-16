@@ -3,32 +3,32 @@
         <div class="bg-white p-6 dark:bg-slate-800">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
                 <div class="rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ asset($about->imagen) }}"
+                    <img class="h-72 w-full object-cover object-center" src="{{ asset($principal->imagen) }}"
                         alt="Imagen de header">
                 </div>
                 <div class="lg:col-span-2 flex flex-col justify-around">
-                    <h1 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">{{ $about->titulo }}</h1>
-                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">{{ $about->texto }}</p>
+                    <h1 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">{{ $principal->titulo }}</h1>
+                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">{{ $principal->texto }}</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
                 <div class="lg:col-start-3 md:col-start-2 md:row-start-1 rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ asset($about->imagen) }}"
+                    <img class="h-72 w-full object-cover object-center" src="{{ asset($mision->imagen) }}"
                         alt="Imagen de misión">
                 </div>
                 <div class="lg:col-span-2 flex flex-col justify-around md:col-start-1">
-                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-start">{{ $about->titulo }}</h2>
-                    <p class="lg:text-xl text-center md:text-start md:leading-relaxed lg:leading-loose">{{ $about->texto }}</p>
+                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-start">{{ $mision->titulo }}</h2>
+                    <p class="lg:text-xl text-center md:text-start md:leading-relaxed lg:leading-loose">{{ $mision->texto }}</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
                 <div class="rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ asset($about->imagen) }}"
+                    <img class="h-72 w-full object-cover object-center" src="{{ asset($vision->imagen) }}"
                         alt="Imagen de visión">
                 </div>
                 <div class="lg:col-span-2 flex flex-col justify-around">
-                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">{{ $about->titulo }}</h2>
-                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">{{ $about->texto }}</p>
+                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">{{ $vision->titulo }}</h2>
+                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">{{ $vision->texto }}</p>
                 </div>
             </div>
             <div class="my-28">
