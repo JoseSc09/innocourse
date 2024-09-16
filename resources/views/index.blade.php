@@ -100,7 +100,8 @@
                     <div class="promo-price text-xl text-gray-700 mb-4">
                         <span>S/</span><span class="amount text-4xl font-bold">{{ $promo->precio }}</span><span>
                             Soles</span>
-                        <span class="promo-duration block text-sm text-gray-600"> {{ $promo->num_cursos }} Curso de {{ $promo->duracion_meses }} meses</span>
+                        <span class="promo-duration block text-sm text-gray-600"> {{ $promo->num_cursos }} Curso de
+                            {{ $promo->duracion_meses }} meses</span>
                     </div>
                     <div class="promo-description text-sm text-gray-600 mb-6">
                         {{ $promo->descripcion }}
