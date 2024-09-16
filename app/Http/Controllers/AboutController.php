@@ -24,8 +24,11 @@ class AboutController extends Controller
             ->with('instructor')
             ->get();
 
-        $about = About::first();
+        
+        $principal = About::where('id_about', 1)->first();
+        $mision = About::where('id_about', 2)->first();
+        $vision = About::where('id_about', 3)->first();
 
-        return view('pages.sobre-nosotros.index', compact('cursos','about'));
+        return view('pages.sobre-nosotros.index', compact('cursos','principal','mision','vision'));
     }
 }
