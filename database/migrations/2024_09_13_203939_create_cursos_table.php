@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('titulo');
             $table->text('descripcion')->nullable();
             $table->decimal('precio', 10, 2);
-            $table->foreignId('instructor_id')->nullable()->constrained('users','usuario_id')->onDelete('set null');
+            $table->foreignId('instructor_id')->nullable()->constrained('users','id')->onDelete('set null');
             $table->foreignId('categoria_id')->constrained('categorias','categoria_id')->onDelete('cascade');
             $table->timestamps();
         });
