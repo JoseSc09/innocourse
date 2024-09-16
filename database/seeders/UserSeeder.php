@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Usuario;
 
-class UsuarioSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class UsuarioSeeder extends Seeder
     public function run(): void
     {
         //
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/user_default.png';
         $usuario->nombre = 'Jose';
         $usuario->apellido = 'Calderon';
@@ -25,7 +25,7 @@ class UsuarioSeeder extends Seeder
         $usuario->save();
 
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/instructor_carla_casas.jpg';
         $usuario->nombre = 'Carla';
         $usuario->apellido = 'Casas';
@@ -35,7 +35,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 2;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/instructor_andres_galicia.jpg';
         $usuario->nombre = 'Andres';
         $usuario->apellido = 'Galicia';
@@ -45,7 +45,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 2;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/instructor_luz_hernandez.jpg';
         $usuario->nombre = 'Luz';
         $usuario->apellido = 'Hernandez';
@@ -55,7 +55,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 2;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/instructor_juan_maya.jpg';
         $usuario->nombre = 'Juan';
         $usuario->apellido = 'Maya';
@@ -65,7 +65,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 2;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/user_default.png';
         $usuario->nombre = 'Carlos';
         $usuario->apellido = 'Gomez';
@@ -75,7 +75,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 3;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/user_default.png';
         $usuario->nombre = 'Maria';
         $usuario->apellido = 'Jimenez';
@@ -85,7 +85,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 3;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/user_default.png';
         $usuario->nombre = 'Elena';
         $usuario->apellido = 'Peralta';
@@ -95,7 +95,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 3;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/user_default.png';
         $usuario->nombre = 'Luis';
         $usuario->apellido = 'Fernandez';
@@ -105,7 +105,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 3;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/user_default.png';
         $usuario->nombre = 'Ricardo';
         $usuario->apellido = 'Tavares';
@@ -115,7 +115,7 @@ class UsuarioSeeder extends Seeder
         $usuario->rol_id= 3;
         $usuario->save();
 
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario->imagen = 'storage/images/usuarios/user_default.png';
         $usuario->nombre = 'Mario';
         $usuario->apellido = 'Casas';

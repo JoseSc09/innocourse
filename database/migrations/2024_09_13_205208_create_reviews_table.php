@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id('review_id');
             $table->foreignId('curso_id')->constrained('cursos','curso_id')->onDelete('cascade');
-            $table->foreignId('usuario_id')->constrained('usuarios','usuario_id')->onDelete('cascade');
+            $table->foreignId('usuario_id')->constrained('users','usuario_id')->onDelete('cascade');
             $table->integer('calificacion')->unsigned()->check('calificacion >= 1 AND calificacion <= 5');
             $table->text('comentario')->nullable();
             $table->timestamps();
