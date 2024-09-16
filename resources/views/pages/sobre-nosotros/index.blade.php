@@ -3,52 +3,32 @@
         <div class="bg-white p-6 dark:bg-slate-800">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
                 <div class="rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ Vite::image('about_img1.jpg') }}"
+                    <img class="h-72 w-full object-cover object-center" src="{{ asset($about->imagen) }}"
                         alt="Imagen de header">
                 </div>
                 <div class="lg:col-span-2 flex flex-col justify-around">
-                    <h1 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">Innocourse
-                        forma
-                        profesionales para la vida
-                        tecnológica</h1>
-                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">Somos InnoCourse,
-                        una
-                        plataforma educativa dedicada a fusionar innovación y
-                        aprendizaje. Nuestro
-                        objetivo es proporcionar experiencias de aprendizaje transformadoras que impulsen el desarrollo
-                        personal y profesional. Nos especializamos en crear cursos dinámicos y actualizados que preparan
-                        a
-                        nuestros estudiantes para los desafíos del mundo moderno.</p>
+                    <h1 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">{{ $about->titulo }}</h1>
+                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">{{ $about->texto }}</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
                 <div class="lg:col-start-3 md:col-start-2 md:row-start-1 rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ Vite::image('about_mision.jpg') }}"
+                    <img class="h-72 w-full object-cover object-center" src="{{ asset($about->imagen) }}"
                         alt="Imagen de misión">
                 </div>
                 <div class="lg:col-span-2 flex flex-col justify-around md:col-start-1">
-                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-start">Misión</h2>
-                    <p class="lg:text-xl text-center md:text-start md:leading-relaxed lg:leading-loose">Empoderar a los
-                        estudiantes mediante herramientas educativas innovadoras y
-                        accesibles que fomenten el
-                        aprendizaje continuo y el desarrollo de habilidades críticas para el futuro. Nos comprometemos a
-                        ofrecer una educación de alta calidad, adaptada a las necesidades cambiantes del mercado global
-                        y
-                        centrada en el éxito de nuestros estudiantes.</p>
+                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-start">{{ $about->titulo }}</h2>
+                    <p class="lg:text-xl text-center md:text-start md:leading-relaxed lg:leading-loose">{{ $about->texto }}</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
                 <div class="rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ Vite::image('about_vision.jpg') }}"
+                    <img class="h-72 w-full object-cover object-center" src="{{ asset($about->imagen) }}"
                         alt="Imagen de visión">
                 </div>
                 <div class="lg:col-span-2 flex flex-col justify-around">
-                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">Visión</h2>
-                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">Ser la plataforma
-                        líder en educación innovadora, reconocida por transformar la
-                        manera en que las
-                        personas aprenden y aplican conocimientos, creando un impacto positivo en sus vidas y en la
-                        sociedad.</p>
+                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">{{ $about->titulo }}</h2>
+                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">{{ $about->texto }}</p>
                 </div>
             </div>
             <div class="my-28">
