@@ -14,7 +14,7 @@ class Curso extends Model
     // Relación con la tabla "usuarios" (instructor -> usuario)
     public function instructor()
     {
-        return $this->belongsTo(Usuario::class, 'instructor_id', 'usuario_id');
+        return $this->belongsTo(User::class, 'instructor_id', 'usuario_id');
     }
 
     // Relación con la tabla "categorias"
