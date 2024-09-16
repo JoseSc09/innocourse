@@ -47,18 +47,19 @@
                 <option value="3-and-up">3 estrellas y más</option>
             </select>
         </div>
-
-       <div class="courses-list">
-       @foreach($cursos as $curso)
-        <div class="course-card">
-                <img src="{{ asset($curso->imagen) }}" alt="Imagen del curso">
-                <h2>{{$curso->titulo}}</h2>
-                <p>{{$curso->descripcion}}</p>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-                <div class="price">S/ {{$curso->precio}}</div>
-                <a href="https://9000-idx-innocourse-1724657250495.cluster-duylic2g3fbzerqpzxxbw6helm.cloudworkstations.dev/pagos?monospaceUid=989539&embedded=0" class="enroll-button">Inscribete!</a>
-        </div>
-        @endforeach           
+        <div class="courses-list">
+            @foreach ($cursos as $curso)
+                <div class="course-card">
+                    <img src="{{ asset($curso->imagen) }}" alt="Imagen del curso">
+                    <h2>{{ $curso->titulo }}</h2>
+                    <p>{{ $curso->descripcion }}</p>
+                    <div class="rating">
+                        <x-star-rating :rating="$curso->reviews_avg_calificacion" />
+                    </div>
+                    <div class="price">S/ {{ $curso->precio }}</div>
+                    <a href="{{ route('payments.index') }}" class="enroll-button">Inscribete!</a>
+                </div>
+            @endforeach
         </div>
     </section>
 </x-app-layout>

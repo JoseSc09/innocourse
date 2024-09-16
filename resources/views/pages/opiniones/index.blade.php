@@ -23,22 +23,21 @@
 
         <div class="agrupacion grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5 p-4">
             <!-- OPINIONES -->
-            @foreach ($opiniones as $opinion)
+            @foreach ($reviews as $review)
                 <div class="article-opi bg-[#9763f8] bg-opacity-30 p-4 rounded-lg">
                     <div class="conjunto flex items-center justify-between mb-2">
                         <div class="image">
-                            <img src="{{ Vite::image($opinion['image']) }}" alt="user" class="user w-16 h-16 rounded-full">
+                            <img src="{{ asset($review->usuario->imagen) }}" alt="user" class="user w-16 h-16 rounded-full">
                         </div>
                         <div class="usuario ml-4">
-                            <h3 class="text-lg dark:text-white">{{ $opinion['name'] }}</h3>
-                            <p class="correo text-sm dark:text-gray-300">{{ $opinion['usuario'] }}</p>
+                            <h3 class="text-lg dark:text-white">{{ $review->usuario->nombre .' '. $review->usuario->apellido}}</h3>
+                            <p class="correo text-sm dark:text-gray-300">{{ '@'.$review->usuario->username }}</p>
                         </div>
-                        <div class="stars ml-auto flex items-center">
-                            <img src="{{ Vite::image($opinion['image2']) }}" alt="logo" class="star w-24">
+                        <div class="ml-auto flex items-center">
+                            <x-star-rating :rating="$review->calificacion" />
                         </div>
                     </div>
-                    <p class="opiniones text-lg dark:text-gray-300">Los cursos de InnoCourse han transformado mi enfoque
-                        profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.</p>
+                    <p class="opiniones text-lg dark:text-gray-300">{{$review->comentario}}</p>
                 </div>
             @endforeach
         </div>

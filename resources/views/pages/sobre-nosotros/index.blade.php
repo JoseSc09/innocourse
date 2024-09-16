@@ -62,16 +62,17 @@
                     de calidad, innovadora y relevante. Su enfoque práctico y actualizado asegura el mejor apoyo y
                     orientación para el éxito de nuestros estudiantes.</p>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    @foreach($cursos as $curso)
-
-                        
-                        <div class="max-w-sm bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    @foreach ($cursos as $curso)
+                        <div
+                            class="max-w-sm bg-gray-50 border border-gray-300 rounded-lg shadow-lg dark:border dark:border-gray-900 dark:bg-gray-800">
                             <img class="rounded-t-lg" src="{{ asset($curso->instructor->imagen) }}" alt="" />
                             <div class="p-5">
                                 <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                {{ $curso->instructor->nombre . ' '.$curso->instructor->apellido }}</h5>
-                                <span class="text-sm text-gray-600 tracking-tight dark:text-gray-400">{{ $curso->nombre }}</span>
-                                <p class="my-3 font-normal text-gray-700 dark:text-gray-400">Curso {{ $curso->titulo }}</p>
+                                    {{ $curso->instructor->nombre . ' ' . $curso->instructor->apellido }}</h5>
+                                <span
+                                    class="text-sm text-gray-600 tracking-tight dark:text-gray-400">{{ $curso->nombre }}</span>
+                                <p class="my-3 font-normal text-gray-700 dark:text-gray-400">Curso {{ $curso->titulo }}
+                                </p>
                                 <a href="#"
                                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                     Ver cursos
@@ -83,12 +84,8 @@
                                 </a>
                             </div>
                         </div>
-                    
                     @endforeach
-                    
-                    
                 </div>
-
             </div>
         </div>
         

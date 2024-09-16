@@ -21,4 +21,10 @@ class Curso extends Model
     public function categoria(){
         return $this->belongsTo(Categoria::class,'categoria_id','categoria_id');
     }
+
+    // Relación de un curso con muchas reviews
+    public function reviews()
+    {
+        return $this->hasMany(Review::class,'curso_id','curso_id');
+    }
 }

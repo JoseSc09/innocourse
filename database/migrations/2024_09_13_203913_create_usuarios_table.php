@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('imagen')->nullable();
             $table->string('nombre');
             $table->string('apellido');
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
             $table->foreignId('rol_id')->nullable()->constrained('roles', 'rol_id')->onDelete('set null');
