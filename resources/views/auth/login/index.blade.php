@@ -13,23 +13,18 @@
         <section class="right flex-1 max-w-xl md:max-w-full bg-[#e0d4fd] flex flex-col items-center mb-20">
             <h2 class="text-white text-4xl font-bold text-center mt-8 p-4 rounded-lg md:text-3xl"
                 style="-webkit-text-stroke: 2px black;">¡Bienvenid@ de vuelta!</h2>
-            <form id="registerForm" class="flex flex-col ml-0 justify-center mt-8 w-150 gap-4 md:w-2/3" method="POST">
+            <form id="registerForm" class="flex flex-col ml-0 justify-center mt-8 w-150 gap-4 md:w-2/3" action="{{route('validate')}}" method="POST">
                 @csrf
                 <h3 class="text-2xl font-serif">Inicio Sesion:</h3>
                 <div>
-                    <p class="text-lg">Correo electronico</p>
-                    <input type="email" id="email" placeholder="Ingrese su correo electrónico" required
+                    <label class="text-lg">Correo electronico</label>
+                    <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required
                         class="w-full p-2 border-none rounded-3xl text-base mb-2 md:w-full">
                 </div>
                 <div>
-                    <p class="text-lg">Contraseña</p>
-                    <input type="password" id="password" placeholder="Ingrese su contraseña" required
+                    <label class="text-lg">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required
                         class="w-full p-2 border-none rounded-3xl text-base mb-2 md:w-full">
-                </div>
-                <div>
-                    <p class="text-lg">Confirma tu contraseña</p>
-                    <input type="password" id="confirmPassword" placeholder="Confirme su contraseña" required
-                        class="w-full p-2 border-none rounded-3xl text-base mb-0 md:w-full">
                 </div>
                 <div class="mb-4">
                     <a href="#" class="botom-blue-one text-blue-500 md:mb-2 ">Crea o Recupera tu contraseña</a>

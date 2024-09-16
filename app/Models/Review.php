@@ -12,7 +12,7 @@ class Review extends Model
     protected $table = 'reviews';
 
     public function usuario(){
-        return $this->belongsTo(User::class,'usuario_id','usuario_id');
+        return $this->belongsTo(User::class,'usuario_id','id');
     }
 
     public function curso(){

@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
@@ -15,6 +16,12 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+
+        // Verifica si el usuario está autenticado y si el rol_id es 1
+        if (Auth::check() && Auth::user()->rol_id == 1) {
+            return $next($request);
+        }
+
+        return redirect('/')->with('error', 'Acceso denegado.');
     }
 }
