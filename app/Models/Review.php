@@ -10,4 +10,13 @@ class Review extends Model
     use HasFactory;
 
     protected $table = 'reviews';
+
+    public function usuario(){
+        return $this->belongsTo(Usuario::class,'usuario_id','usuario_id');
+    }
+
+    public function curso(){
+        return $this->belongsTo(Curso::class,'curso_id','curso_id');
+    }
+    
 }
