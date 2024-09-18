@@ -16,8 +16,9 @@ Route::get('/opiniones', [OpinionsController::class, 'index'])->name('opinions.i
 Route::get('/pagos', [PaymentsController::class, 'index'])->name('payments.index');
 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login.index');
 Route::post('/login', [LoginController::class, 'validate'])->name('validate');
+
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 

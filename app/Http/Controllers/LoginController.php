@@ -29,7 +29,7 @@ class LoginController extends Controller
         if ($user && Hash::check($request->password, $user->password)) {
             // Guardar la sesión del usuario
             Auth::login($user);
-            //dd(Auth::user()->nombre);
+            
             // Redirigir al dashboard si es administrador
             if ($user->rol_id == 1) {
                 return redirect('/dashboard');
