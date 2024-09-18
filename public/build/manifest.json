@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-Wg7V6Rb2.css",
+    "file": "assets/app-BP_4ZKGA.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -11,18 +11,6 @@
   "resources/images/Logo.jpg": {
     "file": "assets/Logo-BdyzhONq.jpg",
     "src": "resources/images/Logo.jpg"
-  },
-  "resources/images/about_img1.jpg": {
-    "file": "assets/about_img1-BCq7e6IR.jpg",
-    "src": "resources/images/about_img1.jpg"
-  },
-  "resources/images/about_mision.jpg": {
-    "file": "assets/about_mision-CSY93ySY.jpg",
-    "src": "resources/images/about_mision.jpg"
-  },
-  "resources/images/about_vision.jpg": {
-    "file": "assets/about_vision-D-j6JIy3.jpg",
-    "src": "resources/images/about_vision.jpg"
   },
   "resources/images/afp_integra.jpg": {
     "file": "assets/afp_integra-odEF5F7z.jpg",
