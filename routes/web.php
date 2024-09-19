@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OpinionsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentsController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/cursos', [CoursesController::class, 'index'])->name('courses.index');
@@ -18,7 +19,8 @@ Route::get('/pagos', [PaymentsController::class, 'index'])->name('payments.index
 
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login.index');
 Route::post('/login', [LoginController::class, 'validate'])->name('validate');
-
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest')->name('register.index');
+Route::post('/register', [RegisterController::class, 'register'])->name('validarRegistro');
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 
