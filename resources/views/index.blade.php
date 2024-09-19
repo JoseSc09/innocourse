@@ -78,9 +78,8 @@
         </h2>
         <div class="info-grid grid grid-cols-1 md:grid-cols-2 gap-6 items-center ml-6 md:ml-16 lg:ml-24">
             <div class="info-text space-y-4">
-                @foreach ($iconos as $icon)
-                    <p class="flex items-center p-4 dark:text-gray-100"><img src="{{ Vite::image($icon['image']) }}"
-                            alt="{{ $icon['texto'] }}" class="mr-4 w-8 h-8">{{ $icon['texto'] }}</p>
+                @foreach ($features as $feature)
+                    <p class="flex items-center gap-6 p-4 dark:text-gray-100"> <i class="{{$feature['icon']}} fa-xl"></i>{{ $feature['content'] }}</p>
                 @endforeach
             </div>
             <div class="info-img px-4 md:px-8 lg:px-9">

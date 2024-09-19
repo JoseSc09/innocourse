@@ -39,32 +39,32 @@ class HomeController extends Controller
             ],
         ];
         
-        $iconos = [
+        $features = [
             [
-                'image' => 'iconInfo1.jpg',
-                'texto' => 'Aprende algo nuevo cada 10 minutos',
+                'icon' => 'fa-regular fa-circle-play',
+                'content' => 'Aprende algo nuevo cada 10 minutos',
             ],
             [
-                'image' => 'iconInfo2.jpg',
-                'texto' => 'Te enseñamos con material profesional de principiante a experto',
+                'icon' => 'fa-solid fa-route',
+                'content' => 'Te enseñamos con material profesional de principiante a experto',
             ],
             [
-                'image' => 'iconInfo3.jpg',
-                'texto' => 'Pon a prueba tu progreso de forma interactiva',
+                'icon' => 'fa-solid fa-arrow-trend-up',
+                'content' => 'Pon a prueba tu progreso de forma interactiva',
             ],
             [
-                'image' => 'iconInfo4.jpg',
-                'texto' => 'Viabilidad en descargar las clases para volver a visualizar',
+                'icon' => 'fa-solid fa-download',
+                'content' => 'Viabilidad en descargar las clases para volver a visualizar',
             ],
             [
-                'image' => 'iconInfo5.jpg',
-                'texto' => 'Visualiza tus logros y metas',
+                'icon' => 'fa-regular fa-circle-check',
+                'content' => 'Visualiza tus logros y metas',
             ],
         ];
         
         $suscripciones = Suscripcion::all();
         
         $cursos = Curso::take(6)->get();
-        return view('index', compact('empresas','cursos','iconos','suscripciones'));
+        return view('index', compact('empresas','cursos','features','suscripciones'));
     }
 }
