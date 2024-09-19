@@ -1,4 +1,5 @@
 import './bootstrap';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 /* Cargar imagenes y fuentes en vite */
 import.meta.glob([

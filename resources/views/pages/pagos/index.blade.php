@@ -176,8 +176,8 @@
         <div class="product-summary flex-1 max-w-lg bg-white dark:bg-gray-800 text-black dark:text-white p-5 border border-gray-300 rounded-lg shadow-lg mt-5 lg:mt-0">
             <h3 class="text-xl font-bold mb-4">Tus productos</h3>
             <div class="product flex justify-between items-start mb-4">
-                <span class="flex items-center">
-                    <img src="{{ Vite::image('logocurso.png') }}" alt="Curso" class="h-6 mr-2">
+                <span class="flex items-center gap-4">
+                    <i class="fa-solid fa-medal"></i>
                     Curso de Desarrollo Web
                 </span>
                 <span>S/. 180 PEN</span>
