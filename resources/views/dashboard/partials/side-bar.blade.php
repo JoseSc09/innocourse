@@ -15,18 +15,68 @@
         <ul class="space-y-2">
             <!-- Módulo de Usuarios -->
             <li>
-                <a href="#" id="usuariosLink"
+                <a href="{{ route('admin.usuarios.show', ['usuario' => 3]) }}"
                     class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700">
                     <span class="block w-12 text-center"><i class="fas fa-users text-xl"></i></span>
                     <span class="hidden lg:inline-block sidebar-text">Usuarios</span>
                 </a>
             </li>
+            <!-- Módulo de Categoria -->
+            <li>
+                <a href="{{ route('admin.cursos.index') }}"
+                    class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700">
+                    <span class="block w-12 text-center"><i class="fas fa-solid fa-shapes text-xl"></i></span>
+                    <span class="hidden lg:inline-block sidebar-text">Categoria</span>
+                </a>
+            </li>
             <!-- Módulo de Cursos -->
             <li>
-                <a href="#" id="cursosLink"
+                <a href="{{ route('admin.cursos.index') }}"
                     class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700">
                     <span class="block w-12 text-center"><i class="fas fa-book text-xl"></i></span>
                     <span class="hidden lg:inline-block sidebar-text">Cursos</span>
+                </a>
+            </li>
+            <!-- Módulo de Categoria -->
+            <li>
+                <a href="{{ route('admin.cursos.index') }}"
+                    class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700">
+                    <span class="block w-12 text-center"><i class="fa-solid fa-id-card"></i></span>
+                    <span class="hidden lg:inline-block sidebar-text">Membresías</span>
+                </a>
+            </li>
+            <br>
+            <br>
+            <!-- Módulo de Categoria -->
+            <li>
+                <a href="{{ route('admin.cursos.index') }}" 
+                    class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700">
+                    <span class="block w-12 text-center"><i class="fa-solid fa-user-graduate fa-lg"></i></span>
+                    <span class="hidden lg:inline-block sidebar-text">Estudiantes</span>
+                </a>
+            </li>
+            <br>
+            <br>
+            <!-- Módulo de Categoria -->
+            <li>
+                <a href="{{ route('admin.cursos.index') }}" 
+                    class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700">
+                    <span class="block w-12 text-center"><i class="fas fa-home text-xl"></i></span>
+                    <span class="hidden lg:inline-block sidebar-text">Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.cursos.index') }}" 
+                    class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700">
+                    <span class="block w-12 text-center"><i class="fas fa-trash text-xl"></i></span>
+                    <span class="hidden lg:inline-block sidebar-text">Sobre Nosotros</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.cursos.index') }}" 
+                    class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700">
+                    <span class="block w-12 text-center"><i class="fa-sharp fa-solid fa-circle-question fa-lg"></i></span>
+                    <span class="hidden lg:inline-block sidebar-text">FAQs</span>
                 </a>
             </li>
         </ul>

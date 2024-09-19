@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminCursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminUsuarioController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\DashboardController;
@@ -21,7 +23,12 @@ Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->na
 Route::post('/login', [LoginController::class, 'validate'])->name('validate');
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest')->name('register.index');
 Route::post('/register', [RegisterController::class, 'register'])->name('validarRegistro');
-Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.index')->middleware([\App\Http\Middleware\AdminMiddleware::class]);
+Route::middleware([\App\Http\Middleware\AdminMiddleware::class])->group(function () {
+    //Rutas del dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::resource('/dashboard/cursos', AdminCursoController::class)->names('admin.cursos');
+    Route::resource('/dashboard/usuarios', AdminUsuarioController::class)->names('admin.usuarios');
+});
