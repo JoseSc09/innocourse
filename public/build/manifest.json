@@ -32,7 +32,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DkNbiSsT.css",
+    "file": "assets/app-C4GMvvxI.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -80,30 +80,6 @@
     "file": "assets/cursoInfo-CKQbIyA3.jpg",
     "src": "resources/images/cursoInfo.jpg"
   },
-  "resources/images/iconInfo1.jpg": {
-    "file": "assets/iconInfo1-wNXOWxcI.jpg",
-    "src": "resources/images/iconInfo1.jpg"
-  },
-  "resources/images/iconInfo2.jpg": {
-    "file": "assets/iconInfo2-C6_zIT3K.jpg",
-    "src": "resources/images/iconInfo2.jpg"
-  },
-  "resources/images/iconInfo3.jpg": {
-    "file": "assets/iconInfo3-CcFSYz_m.jpg",
-    "src": "resources/images/iconInfo3.jpg"
-  },
-  "resources/images/iconInfo4.jpg": {
-    "file": "assets/iconInfo4-BI7elyYG.jpg",
-    "src": "resources/images/iconInfo4.jpg"
-  },
-  "resources/images/iconInfo5.jpg": {
-    "file": "assets/iconInfo5-CpkPEvjl.jpg",
-    "src": "resources/images/iconInfo5.jpg"
-  },
-  "resources/images/logocurso.png": {
-    "file": "assets/logocurso-DkVXu3On.png",
-    "src": "resources/images/logocurso.png"
-  },
   "resources/images/mastercard.png": {
     "file": "assets/mastercard-CMt8Vn6X.png",
     "src": "resources/images/mastercard.png"
@@ -129,7 +105,7 @@
     "src": "resources/images/yapeplin.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-D-TLnyCV.js",
+    "file": "assets/app-BAhAn8kI.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
