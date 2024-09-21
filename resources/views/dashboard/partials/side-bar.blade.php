@@ -27,15 +27,15 @@
                     <li>
                         
                         <a href="{{ route('admin.usuarios.show', 'administrador') }}"
-                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"> <span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Administrador</a>
+                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-700 dark:text-white dark:hover:bg-gray-700"> <span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Administrador</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.usuarios.show', 'instructores') }}"
-                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Instructores</a>
+                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-700 dark:text-white dark:hover:bg-gray-700"><span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Instructores</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.usuarios.show', 'estudiantes') }}"
-                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Estudiantes</a>
+                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-700 dark:text-white dark:hover:bg-gray-700"><span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Estudiantes</a>
                     </li>
                 </ul>
             </li>

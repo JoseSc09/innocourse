@@ -1,5 +1,4 @@
-<nav
-    class="bg-slate-800 text-gray-200 border-gray-200 dark:bg-gray-900 justify-between md:font-semibold md:text-xl text-lg">
+<nav class="bg-slate-800 text-gray-200 border-gray-200 justify-between md:font-semibold md:text-xl text-lg">
     <div class=" w-[95%] flex flex-wrap items-center justify-between mx-auto p-4">
         <div class="flex items-center space-x-3 rtl:space-x-reverse">
             <img class="rounded-full w-16 md:w-24" src="{{ Vite::image('Logo.jpg') }}" alt="Logo Inno Course">
@@ -11,27 +10,18 @@
 
         <div class=" relative flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-4">
 
-            <div id="dark-mode-toggle" class="toggle-container md:mr-4 md:w-20 md:h-10 w-10 h-5">
-                <div class="toggle md:w-10 md:h-10 w-5 h-5">
+            <div id="dark-mode-toggle" class="toggle-container md:mr-4 md:w-20 md:h-10 w-16 h-7 min-w-10">
+                <div class="toggle md:w-10 md:h-10 w-7 h-7">
                 </div>
             </div>
             @auth
-                {{-- <div class="relative flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"> --}}
-
                 <button type="button"
                     class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-green-600"
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                     data-dropdown-placement="bottom">
                     <img class="md:w-14  w-8  rounded-full" src="{{ asset(Auth::user()->imagen) }}" alt="foto de usuario">
                 </button>
-                <button id="menu-toggle" class="md:hidden text-gray-200 focus:outline-none">
 
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                        </path>
-                    </svg>
-                </button>
                 <!-- Dropdown menu -->
                 <div class="absolute shadow-xl right-0 top-14 mt-2 z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg dark:bg-gray-700 dark:divide-gray-600"
                     id="user-dropdown">
@@ -58,8 +48,6 @@
                         </li>
                     </ul>
                 </div>
-
-
                 <script>
                     const userMenuButton = document.getElementById('user-menu-button');
                     const userDropdown = document.getElementById('user-dropdown');
@@ -76,10 +64,17 @@
                     });
                 </script>
             @else
-                <a class="rounded-full text-white bg-purple-500 px-5 py-2 hover:bg-purple-600 transition-colors duration-300 w-full md:w-auto"
+                <a class="rounded-full text-white bg-purple-500 px-3 py-2 md:px-5 md:py-2 hover:bg-purple-600 transition-colors duration-300 text-center"
                     href="{{ route('login.index') }}"> Iniciar Sesión</a>
             @endauth
+            <button id="menu-toggle" class="md:hidden text-gray-200 focus:outline-none">
 
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
         </div>
         <!-- Menú de navegación -->
         <div class="hidden md:flex flex-col md:flex-row items-center w-full md:w-auto " id="nav-menu">
