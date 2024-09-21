@@ -8,19 +8,19 @@
     <title> Admin </title>
 
     @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
 </head>
 
 <body class="bg-gray-100">
-
+    
     <!-- Contenedor Principal -->
     <div class="flex h-screen">
-
+        
         <x-side-bar>
         </x-side-bar>
-
+        
         {{ $slot }}
     </div>
+    @vite('resources/js/admin.js')
 </body>
 
 </html>

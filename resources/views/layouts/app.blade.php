@@ -8,17 +8,16 @@
     <title>{{ config('app.name', 'InnoCourse') }}</title>
 
     @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
 </head>
 
 <body class="dark:bg-slate-800">
- 
+    
     <x-header></x-header>
-
-        {{ $slot }}
-
+    
+    {{ $slot }}
+    
     <x-footer></x-footer>
     
+    @vite('resources/js/app.js')
 </body>
-
 </html>
