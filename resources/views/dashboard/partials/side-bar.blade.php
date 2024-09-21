@@ -17,25 +17,25 @@
         <ul class="space-y-2">
             <!-- Módulo de Usuarios -->
             <li>
-                <button type="button"
-                    class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700"
+                <a class="flex items-center justify-center lg:justify-start py-3 px-4 text-white hover:bg-gray-700 focus:bg-gray-700 cursor-pointer"
                     aria-controls="dropdown-users" data-collapse-toggle="dropdown-users">
                     <span class="block w-12 text-center"><i class="fas fa-users text-xl"></i></span>
                     <span class="hidden lg:inline-block sidebar-text">Usuarios</span>
                     <span class="block w-12 text-center"><i class="fa-solid fa-chevron-down"></i></span>
-                </button>
+                </a>
                 <ul id="dropdown-users" class="hidden py-2 space-y-2">
                     <li>
+                        
                         <a href="{{ route('admin.usuarios.show', 'administrador') }}"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Administrador</a>
+                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"> <span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Administrador</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.usuarios.show', 'instructores') }}"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Instructores</a>
+                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Instructores</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.usuarios.show', 'estudiantes') }}"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Estudiantes</a>
+                            class="flex items-center w-full p-2 text-white transition duration-75 pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span class="block w-12 text-center"><i class="fa-solid fa-angle-right"></i></span>Estudiantes</a>
                     </li>
                 </ul>
             </li>
