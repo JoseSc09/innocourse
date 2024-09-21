@@ -10,10 +10,7 @@ class AdminUsuarioController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        
-    }
+    public function index() {}
 
     /**
      * Show the form for creating a new resource.
@@ -26,17 +23,26 @@ class AdminUsuarioController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-
-    }
+    public function store(Request $request) {}
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $rol_id)
     {
-        $users = User::where("rol_id", $id)->get();
+
+        switch ($rol_id) {
+            case "administrador":
+                $rol_id = 1;
+                break;
+            case "instructores":
+                $rol_id = 2;
+                break;
+            case "estudiantes":
+                $rol_id = 3;
+                break;
+        }
+        $users = User::where("rol_id", $rol_id)->get();
         return view("dashboard.pages.usuarios.index", compact("users"));
     }
 
