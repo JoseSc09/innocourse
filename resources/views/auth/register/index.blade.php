@@ -1,8 +1,8 @@
 <x-app-layout>
     <div class="container flex flex-col max-w-full md:flex-row justify-between bg-[#e0d4fd]">
-        <section class="left mx-full flex-1 max-w-1/2 md:max-w-1/2">
+        <section class="hidden lg:block left mx-full flex-1 max-w-1/2 md:max-w-1/2">
             <img src="{{ Vite::image('Logo.jpg') }}" alt="Inno Course Logo" class="w-full h-full object-cover md:h-90">
-            <div class="relative  bottom-20 left-12 z-20 w-full md:w-[550px] md:bottom-40 md:left-48">
+            <div class="relative bottom-20 left-12 z-20 w-full md:w-[550px] md:bottom-40 md:left-48">
                 <p
                     class="bg-[#e0d4fd] text-black font-bold rounded-3xl inline-block pt-[15px] pr-[140px] pb-[15px] pl-[5px] ">
                     ¿Ya tienes una cuenta <br>con nosotros?</p>
@@ -23,52 +23,102 @@
                 action="{{ route('validarRegistro') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                <h3 class="text-2xl font-serif">Regístrate:</h3>
+                <h3 class="text-2xl">Regístrate:</h3>
 
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" value="{{ old('nombre') }}">
-                @error('nombre')
-                    <p>{{ $message }}</p>
-                @enderror
+                <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
-                <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido" value="{{ old('apellido') }}">
-                @error('apellido')
-                    <p>{{ $message }}</p>
-                @enderror
+                    {{-- Input Nombre --}}
+                    <div class="sm:col-span-3">
+                        <label for="nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
+                        <div class="mt-2">
+                            <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                        @error('nombre')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <label for="username">Username:</label>
-                <input type="text" name="username" value="{{ old('username') }}">
-                @error('username')
-                    <p>{{ $message }}</p>
-                @enderror
+                    {{-- Input Apellido --}}
+                    <div class="sm:col-span-3">
+                        <label for="apellido" class="block text-sm font-medium leading-6 text-gray-900">Apellido</label>
+                        <div class="mt-2">
+                            <input type="text" id="apellido" name="apellido" value="{{ old('apellido') }}"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                        @error('apellido')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <label for="email">Email:</label>
-                <input type="email" name="email" value="{{ old('email') }}">
-                @error('email')
-                    <p>{{ $message }}</p>
-                @enderror
+                    {{-- Input Username --}}
+                    <div class="sm:col-span-3">
+                        <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                        <div class="mt-2">
+                            <div
+                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                <span
+                                    class="flex rounded-l-md select-none items-center pl-3 text-gray-500 sm:text-sm bg-white">@</span>
+                                <input type="text" name="username" id="username" value="{{ old('username') }}"
+                                    autocomplete="username"
+                                    class="block rounded-r-md flex-1 border-0 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        @error('username')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <label for="password">Contraseña:</label>
-                <input type="password" name="password">
-                @error('password')
-                    <p>{{ $message }}</p>
-                @enderror
+                    {{-- Input Email --}}
+                    <div class="sm:col-span-full">
+                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email
+                        </label>
+                        <div class="mt-2">
+                            <input id="email" type="email" name="email" value="{{ old('email') }}"
+                                autocomplete="email"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                        </div>
+                        @error('email')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <label for="password_confirmation">Confirmar Contraseña:</label>
-                <input type="password" name="password_confirmation">
+                    {{-- Input Password --}}
+                    <div class="sm:col-span-full">
+                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">
+                            Contraseña</label>
+                        <div class="mt-2">
+                            <input id="password" type="password" name="password" value="{{ old('password') }}"
+                                autocomplete="password"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                        </div>
+                        @error('password')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <div class="terms flex flex-col mt-6 w-1/2 gap-2 justify-center mb-4 md:w-1/2">
-                    <label class="flex items-center gap-2">
-                        <input type="checkbox" name="terms" required class="scale-150 mr-2">
-                        Acepto los términos y condiciones
-                    </label>
-                    <label class="flex items-center gap-2">
-                        <input type="checkbox" name="privacy" required class="scale-150 mr-2">
-                        Acepto la política de Privacidad
-                    </label>
+                    {{-- Input Comfirmar Password --}}
+                    <div class="sm:col-span-full">
+                        <label for="password_confirmation" class="block text-sm font-medium leading-6 text-gray-900">
+                            Contraseña</label>
+                        <div class="mt-2">
+                            <input id="password_confirmation" type="password" name="password_confirmation"
+                                autocomplete="password_confirmation"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                        </div>
+                    </div>
                 </div>
-
+                <div class="text-sm leading-6">
+                    <input id="termns" name="termns" type="checkbox" required
+                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" />
+                    <label for="termns" class="font-medium text-gray-900">Acepto los términos y
+                        condiciones</label>
+                </div>
+                <div class="text-sm leading-6">
+                    <input id="politics" name="politics" type="checkbox" required
+                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" />
+                    <label for="politics" class="font-medium text-gray-900">Acepto la política de Privacidad</label>
+                </div>
                 <div class="rigth-black-button flex justify-center">
                     <button type="submit"
                         class="bg-black text-white text-lg border-none rounded-3xl cursor-pointer py-2 px-6 mb-2 w-80 md:w-20%">Registrarme</button>
