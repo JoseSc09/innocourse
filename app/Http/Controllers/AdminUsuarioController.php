@@ -30,7 +30,6 @@ class AdminUsuarioController extends Controller
      */
     public function show(string $rol_id)
     {
-
         switch ($rol_id) {
             case "administrador":
                 $rol_id = 1;
@@ -42,8 +41,8 @@ class AdminUsuarioController extends Controller
                 $rol_id = 3;
                 break;
         }
-        $users = User::where("rol_id", $rol_id)->get();
-        return view("dashboard.pages.usuarios.index", compact("users"));
+        $users = User::where("rol_id", $rol_id)->paginate(3);
+        return view("dashboard.pages.usuarios.index", compact("users",'rol_id'));
     }
 
     /**

@@ -5,38 +5,62 @@ import.meta.glob([
     '../images/**',
     '../fonts/**',
 ]);
-// Script para mantener el foco activo en el módulo seleccionado
-const links = document.querySelectorAll('aside nav ul li a');
+// DarkMode
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const html = document.documentElement; // Cambia a document.documentElement
 
-links.forEach(link => {
-    link.addEventListener('click', function (event) {
-        // Elimina el estilo activo de todos los enlaces
-        links.forEach(l => l.classList.remove('bg-gray-700'));
+    // Función para aplicar el modo oscuro
+    const applyDarkMode = (isDarkMode) => {
+        if (isDarkMode) {
+            html.classList.add('dark'); // Cambia a html
+            darkModeToggle.classList.add('active');
+        } else {
+            html.classList.remove('dark'); // Cambia a html
+            darkModeToggle.classList.remove('active');
 
-        // Agrega el estilo activo solo al enlace seleccionado
-        link.classList.add('bg-gray-700');
-    });
+        }
+    };
+
+    // Verifica la preferencia guardada en localStorage
+    const darkMode = localStorage.getItem('dark-mode') === 'true';
+    applyDarkMode(darkMode);
+
+    // Maneja el cambio de modo oscuro
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            const isDarkMode = !html.classList.contains('dark'); // Cambia a html
+            applyDarkMode(isDarkMode);
+            localStorage.setItem('dark-mode', isDarkMode);
+        });
+    }
 });
 
-// Script para el menú hamburguesa
-const menuToggle = document.getElementById('menuToggle');
+// User Avatar
+const userMenuButton = document.getElementById('user-menu-button');
+const userDropdown = document.getElementById('user-dropdown');
+userMenuButton.addEventListener('click', function () {
+    const isExpanded = userMenuButton.getAttribute('aria-expanded') === 'true';
+    userMenuButton.setAttribute('aria-expanded', !isExpanded);
+    userDropdown.classList.toggle('hidden');
+});
+window.addEventListener('click', function (event) {
+    // Si el clic no fue en el botón ni en el menú, ocultar el menú
+    if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+        userDropdown.classList.add('hidden');
+    }
+});
+
+//Users Dropdown SideBar
+const buttonDropdownUsersSidebar = document.getElementById('button-dropdown-users-sidebar');
+const dropdownUsersSideBar = document.getElementById('dropdown-users-side-bar');
+buttonDropdownUsersSidebar.addEventListener('click',function(){
+    dropdownUsersSideBar.classList.toggle('hidden');
+});
+
+//hamburder button SideBar
+const hamburderButton = document.getElementById('hamburder-button');
 const sidebar = document.getElementById('sidebar');
-const sidebarText = document.querySelectorAll('.sidebar-text');
-const sidebarTitle = document.getElementById('sidebarTitle');
-
-menuToggle.addEventListener('click', () => {
-    // Alterna entre mostrar/ocultar los textos de los elementos del sidebar
-    sidebar.classList.toggle('w-64'); // Cambia el ancho del sidebar
-    sidebarText.forEach(text => text.classList.toggle('hidden')); // Muestra/Oculta los textos
-    sidebarTitle.classList.toggle('hidden'); // Muestra/Oculta el título del sidebar
-
-    // Actualiza el estado aria-expanded
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', !isExpanded);
-});
-
-//Sidebar
-document.querySelector("[data-collapse-toggle='dropdown-users']").addEventListener("click", function () {
-    const dropdown = document.getElementById("dropdown-users");
-    dropdown.classList.toggle("hidden");
+hamburderButton.addEventListener('click',function(){
+    sidebar.classList.toggle('translate-x-0');
 });
