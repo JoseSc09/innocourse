@@ -1,26 +1,14 @@
 <x-dashboard-layout>
-    @switch($rol_id)
-        @case(1)
-            <h1>Admins</h1>
-            <div>
-                <span>Añadir</span>
-            </div>
-        @break
-
-        @case(2)
-            <h1>Instructores</h1>
-            <div>
-                <span>Añadir</span>
-            </div>
-        @break
-
-        @case(3)
-            <h1>Estudiantes</h1>
-        @break
-
-        @default
-            <h1>Usuarios</h1>
-    @endswitch
+    <h1 class="capitalize">
+        {{ $rol_id }}
+    </h1>
+    @if ($rol_id !== 'estudiantes')
+        <button id="botton-modal-user"
+            class="block mb-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            type="button">
+            Añadir
+        </button>
+    @endif
     <div
         class="relative overflow-x-auto shadow-md dark:border-2 dark:border-gray-500 sm:rounded-lg overflow-hidden overscroll-contain">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -41,9 +29,11 @@
                     <th scope="col" class="px-6 py-3">
                         Email
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        Acción
-                    </th>
+                    @if ($rol_id !== 'estudiantes')
+                        <th scope="col" class="px-6 py-3">
+                            Acción
+                        </th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -66,16 +56,22 @@
                         <td class="px-6 py-4">
                             {{ $user->email }}
                         </td>
-                        <td class="px-6 py-4">
-                            <a href="#"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
+                        @if ($rol_id !== 'estudiantes')
+                            <td class="px-6 py-4">
+                                <a href="#"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            </td>
+                        @endif
+
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    {{$users->links()}}
+    {{ $users->links() }}
 
+    <x-user-modal-form>
+
+    </x-user-modal-form>
 
 </x-dashboard-layout>

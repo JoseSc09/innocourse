@@ -64,3 +64,14 @@ const sidebar = document.getElementById('sidebar');
 hamburderButton.addEventListener('click',function(){
     sidebar.classList.toggle('translate-x-0');
 });
+
+//Activar modal 
+const crudModalUser = document.getElementById('crud-modal-user');
+const bottonModalUser = document.getElementById('botton-modal-user')
+const closeModalUser = document.getElementById('close-modal-user');
+bottonModalUser.addEventListener('click',function(){
+    crudModalUser.classList.toggle('hidden');
+});
+closeModalUser.addEventListener('click',function(){
+    crudModalUser.classList.add('hidden');
+});
