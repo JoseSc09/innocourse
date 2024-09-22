@@ -30,18 +30,19 @@ class AdminUsuarioController extends Controller
      */
     public function show(string $rol_id)
     {
+        $id = null;
         switch ($rol_id) {
             case "administrador":
-                $rol_id = 1;
+                $id = 1;
                 break;
             case "instructores":
-                $rol_id = 2;
+                $id = 2;
                 break;
             case "estudiantes":
-                $rol_id = 3;
+                $id = 3;
                 break;
         }
-        $users = User::where("rol_id", $rol_id)->paginate(3);
+        $users = User::where("rol_id", $id)->paginate(3);
         return view("dashboard.pages.usuarios.index", compact("users",'rol_id'));
     }
 
