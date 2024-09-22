@@ -10,14 +10,12 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-100">
-    
+<body class="bg-gray-100 dark:bg-slate-700">
+
     <!-- Contenedor Principal -->
-    <div class="flex h-screen">
-        
-        <x-side-bar>
-        </x-side-bar>
-        
+    <x-side-bar>
+    </x-side-bar>
+    <div class="p-4 sm:ml-64 pt-20">
         {{ $slot }}
     </div>
     @vite('resources/js/admin.js')
