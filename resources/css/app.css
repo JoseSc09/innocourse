@@ -200,6 +200,6 @@ html.dark .enroll-button {
 }
 @media (min-width: 768px){
   #dark-mode-toggle.active .toggle{
-    left: 40px;
+    left: 32px;
   }
 }

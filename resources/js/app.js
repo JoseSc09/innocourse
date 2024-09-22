@@ -103,3 +103,18 @@ document.addEventListener("DOMContentLoaded", function () {
     navMenu.classList.toggle("flex");
   });
 });
+
+// User Avatar
+const userMenuButton = document.getElementById('user-menu-button');
+const userDropdown = document.getElementById('user-dropdown');
+userMenuButton.addEventListener('click', function() {
+    const isExpanded = userMenuButton.getAttribute('aria-expanded') === 'true';
+    userMenuButton.setAttribute('aria-expanded', !isExpanded);
+    userDropdown.classList.toggle('hidden');
+});
+window.addEventListener('click', function(event) {
+    // Si el clic no fue en el botón ni en el menú, ocultar el menú
+    if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+        userDropdown.classList.add('hidden');
+    }
+});
