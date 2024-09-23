@@ -70,8 +70,9 @@
     </div>
     {{ $users->links() }}
 
-    <x-user-modal-form>
-
-    </x-user-modal-form>
+    <x-modal >
+        <x-slot name="title">Registrar</x-slot>
+        <x-form-user></x-form-user>
+    </x-modal>
 
 </x-dashboard-layout>
