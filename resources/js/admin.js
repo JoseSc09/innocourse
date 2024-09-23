@@ -54,14 +54,14 @@ window.addEventListener('click', function (event) {
 //Users Dropdown SideBar
 const buttonDropdownUsersSidebar = document.getElementById('button-dropdown-users-sidebar');
 const dropdownUsersSideBar = document.getElementById('dropdown-users-side-bar');
-buttonDropdownUsersSidebar.addEventListener('click',function(){
+buttonDropdownUsersSidebar.addEventListener('click', function () {
     dropdownUsersSideBar.classList.toggle('hidden');
 });
 
 //hamburder button SideBar
 const hamburderButton = document.getElementById('hamburder-button');
 const sidebar = document.getElementById('sidebar');
-hamburderButton.addEventListener('click',function(){
+hamburderButton.addEventListener('click', function () {
     sidebar.classList.toggle('translate-x-0');
 });
 
@@ -69,9 +69,22 @@ hamburderButton.addEventListener('click',function(){
 const crudModalUser = document.getElementById('crud-modal-user');
 const bottonModalUser = document.getElementById('botton-modal-user')
 const closeModalUser = document.getElementById('close-modal-user');
-bottonModalUser.addEventListener('click',function(){
+bottonModalUser.addEventListener('click', function () {
     crudModalUser.classList.toggle('hidden');
 });
-closeModalUser.addEventListener('click',function(){
+closeModalUser.addEventListener('click', function () {
     crudModalUser.classList.add('hidden');
 });
+
+// Input Change Avatar User
+const input = document.getElementById('user_avatar');
+const fileNameDisplay = document.getElementById('file_name');
+input.addEventListener('change', function () {
+    if (input.files.length > 0) {
+        const fileName = input.files[0].name;
+        fileNameDisplay.textContent = `Archivo seleccionado: ${fileName}`;
+    } else {
+        fileNameDisplay.textContent = "No se ha seleccionado ningún archivo";
+    }
+});
+
