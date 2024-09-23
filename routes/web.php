@@ -3,6 +3,10 @@
 use App\Http\Controllers\AdminCursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminCategoriaController;
+use App\Http\Controllers\AdminFaqsController;
+use App\Http\Controllers\AdminMembresiaController;
+use App\Http\Controllers\AdminSobreNosotrosController;
 use App\Http\Controllers\AdminUsuarioController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CoursesController;
@@ -29,6 +33,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware([\App\Http\Middleware\AdminMiddleware::class])->group(function () {
     //Rutas del dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-    Route::resource('/dashboard/cursos', AdminCursoController::class)->names('admin.cursos');
     Route::resource('/dashboard/usuarios', AdminUsuarioController::class)->names('admin.usuarios');
+    Route::resource('/dashboard/categorias', AdminCategoriaController::class)->names('admin.categorias');
+    Route::resource('/dashboard/cursos', AdminCursoController::class)->names('admin.cursos');
+    Route::resource('/dashboard/membresias', AdminMembresiaController::class)->names('admin.membresias');
+    Route::resource('/dashboard/sobre-nosotros', AdminSobreNosotrosController::class)->names('admin.sobre-nosotros');
+    Route::resource('/dashboard/faqs', AdminFaqsController::class)->names('admin.faqs');
 });
