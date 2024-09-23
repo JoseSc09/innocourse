@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class UserModalForm extends Component
+class FormUser extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class UserModalForm extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('dashboard.pages.usuarios.components.user-modal-form');
+        return view('dashboard.pages.usuarios.components.form-user');
     }
 }
