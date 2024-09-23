@@ -18,7 +18,8 @@
 
                 <!-- Logo Innocourse-->
                 <a href="{{ route('home.index') }}" class="flex ms-2 md:me-24">
-                    <img src="{{ Vite::image('Logo.jpg') }}" class="h-12 w-12 object-cover rounded-full me-3"
+                    <img src="{{ Vite::image('Logo.jpg') }}"
+                        class="h-12 w-12 object-cover rounded-full me-3 border-2 border-gray-700"
                         alt="InnoCourse Logo" />
                     <span
                         class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">InnoCourse</span>
@@ -73,7 +74,7 @@
                 <button type="button"
                     class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     id="button-dropdown-users-sidebar">
-                    {{-- Add Icon --}}
+                    <i class="fa-solid fa-user-group"></i>
                     <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Usuarios</span>
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 10 6">
@@ -96,48 +97,41 @@
                     </li>
                 </ul>
             </li>
+
             <li>
-                <a href="#"
+                <a href="{{ route('admin.categorias.index') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    {{-- Add Icon --}}
-                    <span class="flex-1 ms-3 whitespace-nowrap">Inbox</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    {{-- Add icon --}}
+                    <i class="fas fa-solid fa-shapes text-xl"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Categorias</span>
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('admin.cursos.index') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    {{-- Add icon --}}
+                    <i class="fas fa-book text-xl"></i></span>
                     <span class="flex-1 ms-3 whitespace-nowrap">Cursos</span>
                 </a>
             </li>
-
         </ul>
         <ul class="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
             <li>
-                <a href="#"
+                <a href="{{ route('admin.membresias.index') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    {{-- Add icon --}}
-                    <span class="flex-1 ms-3 whitespace-nowrap">Inicio</span>
+                    <i class="fa-solid fa-id-card"></i>
+                    <span class="flex-1 ms-3 whitespace-nowrap">Membresias</span>
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('admin.sobre-nosotros.index') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    {{-- Add icon --}}
+                    <i class="fa-solid fa-tags"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Sobre Nosotros</span>
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('admin.faqs.index') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    {{-- Add icon --}}
+                    <i class="fa-sharp fa-solid fa-circle-question fa-lg"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">FAQs</span>
                 </a>
             </li>
