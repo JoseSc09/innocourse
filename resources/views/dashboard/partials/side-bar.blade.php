@@ -17,7 +17,7 @@
                 <!-- End Hamburger SideBar-->
 
                 <!-- Logo Innocourse-->
-                <a href="{{ route('home.index') }}" class="flex ms-2 md:me-24">
+                <a href="{{ route('dashboard.index') }}" class="flex ms-2 md:me-24">
                     <img src="{{ Vite::image('Logo.jpg') }}"
                         class="h-12 w-12 object-cover rounded-full me-3 border-2 border-gray-700"
                         alt="InnoCourse Logo" />
@@ -45,7 +45,7 @@
                     <!-- End User Avatar-->
 
                     <!-- Dropdown User menu -->
-                    <div class="absolute shadow-xl right-4 top-16 mt-2 z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg dark:bg-gray-700 dark:divide-gray-600"
+                    <div class="absolute shadow-xl min-w-44 right-4 top-16 mt-2 z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg dark:bg-gray-700 dark:divide-gray-600"
                         id="user-dropdown">
                         <div class="px-4 py-3">
                             <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->nombre }}</span>
@@ -53,6 +53,12 @@
                                 class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email }}</span>
                         </div>
                         <ul class="py-2" aria-labelledby="user-menu-button">
+                            @if (Auth::user()->rol_id === 1)
+                                <li>
+                                    <a href="{{ route('home.index') }}"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Inno Course</a>
+                                </li>
+                            @endif
                             <li>
                                 <a href="{{ route('logout') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Salir</a>
@@ -88,11 +94,11 @@
                             class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Administradores</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.usuarios.show', 'instructores') }}"
+                        <a href="{{ route('admin.usuarios.show', 'instructor') }}"
                             class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Instructores</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.usuarios.show', 'estudiantes') }}"
+                        <a href="{{ route('admin.usuarios.show', 'estudiante') }}"
                             class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Estudiantes</a>
                     </li>
                 </ul>

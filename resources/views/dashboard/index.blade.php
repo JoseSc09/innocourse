@@ -1,3 +1,5 @@
 <x-dashboard-layout>
-    Pagina principal
+    <h1>
+        Pagina principal
+    </h1>
 </x-dashboard-layout>
