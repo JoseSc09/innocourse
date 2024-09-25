@@ -93,8 +93,7 @@
         <h1 class="text-center text-3xl font-bold mb-8">¡Elige una de nuestras promociones!</h1>
         <div class="promo-box-container flex flex-wrap justify-center">
             @foreach ($suscripciones as $promo)
-                <div class="promo-box w-full sm:w-80 p-6 m-4 rounded-lg shadow-lg bg-gray-50 border border-gray-200 dark:border-none "
-                    style="background-color: rgba(151, 99, 246, 0.1);">
+                <div class="promo-box w-full sm:w-80 p-6 m-4 rounded-lg shadow-lg bg-gray-50 dark:bg-[rgb(45,45,80)] border border-gray-200 dark:border-none">
                     <div class="promo-header mb-4 ">
                         <div class="promo-type text-sm text-gray-600 dark:text-gray-100">Suscripción</div>
                         <div class="promo-title text-2xl font-bold text-black dark:text-gray-100">
