@@ -2,12 +2,13 @@
     <h1 class="capitalize">
         {{ $rol_id }}
     </h1>
-    @if ($rol_id !== 'estudiantes')
-        <button id="botton-modal-user"
-            class="block mb-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            type="button">
-            Añadir
-        </button>
+    @if ($rol_id !== 'estudiante')
+        <div class="mb-6">
+            <a href="{{ route('admin.usuarios.create', ['rol' => $id]) }}"
+                class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Añadir
+            </a>
+        </div>
     @endif
     <div
         class="relative overflow-x-auto shadow-md dark:border-2 dark:border-gray-500 sm:rounded-lg overflow-hidden overscroll-contain">
@@ -29,7 +30,7 @@
                     <th scope="col" class="px-6 py-3">
                         Email
                     </th>
-                    @if ($rol_id !== 'estudiantes')
+                    @if ($rol_id !== 'estudiante')
                         <th scope="col" class="px-6 py-3">
                             Acción
                         </th>
@@ -56,10 +57,11 @@
                         <td class="px-6 py-4">
                             {{ $user->email }}
                         </td>
-                        @if ($rol_id !== 'estudiantes')
+                        @if ($rol_id !== 'estudiante')
                             <td class="px-6 py-4">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <a href="{{ route('admin.usuarios.edit', $user->id) }}"
+                                    class="font-medium text-green-600 dark:text-green-500 hover:underline text-2xl"><i
+                                        class="fas fa-edit"></i></a>
                             </td>
                         @endif
 
@@ -69,10 +71,5 @@
         </table>
     </div>
     {{ $users->links() }}
-
-    <x-modal >
-        <x-slot name="title">Registrar</x-slot>
-        <x-form-user></x-form-user>
-    </x-modal>
 
 </x-dashboard-layout>
