@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inscripciones', function (Blueprint $table) {
-            $table->id('inscripcion_id'); // Esto crea un BIGINT UNSIGNED AUTO_INCREMENT
+            $table->id('inscripcion_id');
             $table->foreignId('usuario_id')->constrained('users','id')->onDelete('cascade');
             $table->foreignId('curso_id')->constrained('cursos','curso_id')->onDelete('cascade');
             $table->timestamps();
