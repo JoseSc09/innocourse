@@ -26,7 +26,7 @@
                 <!-- End User Avatar-->
 
                 <!-- Dropdown User menu -->
-                <div class="absolute shadow-xl right-20 top-20 mt-2 z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg dark:bg-gray-700 dark:divide-gray-600"
+                <div class="absolute shadow-xl right-20 min-w-44 top-20 mt-2 z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg dark:bg-gray-700 dark:divide-gray-600"
                     id="user-dropdown">
                     <div class="px-4 py-3">
                         <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->nombre }}</span>
@@ -71,9 +71,9 @@
         </div>
 
         <!-- Menú de navegación -->
-        <div class="lg:order-2 hidden lg:flex flex-col lg:flex-row items-center w-full gap-8 lg:w-auto" id="nav-menu">
+        <div class="lg:order-2 hidden lg:flex flex-col lg:flex-row items-center my-2 lg:my-0 w-full gap-8 lg:w-auto" id="nav-menu">
 
-            <ul class="flex flex-col lg:flex-row gap-6 lg:gap-8 w-full lg:w-auto text-center lg:text-left ">
+            <ul class="flex flex-col order-2 lg:order-1 lg:flex-row gap-6 lg:gap-8 w-full lg:w-auto text-center lg:text-left ">
                 <li>
                     <a class="hover:text-white transition-colors duration-300 text-center"
                         href="{{ route('home.index') }}">Inicio</a>
@@ -92,14 +92,11 @@
                 </li>
             </ul>
 
-            <div class="w-full lg:w-auto lg:mt-0">
-                <input class="rounded-full p-2 w-full lg:w-96  text-black focus:outline-none" type="text"
+            <div class="w-full md:w-auto order-1 lg:order-2">
+                <input class="rounded-full p-2 w-full md:w-80 lg:w-96  text-black focus:outline-none" type="text"
                     placeholder="Buscar...">
             </div>
         </div>
         <!-- End Menú de navegación -->
     </div>
-
-
-
 </nav>
