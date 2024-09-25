@@ -10,4 +10,6 @@ class Seccion extends Model
     use HasFactory;
 
     protected $table = 'secciones';
+
+    protected $primaryKey = 'seccion_id';
 }

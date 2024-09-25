@@ -10,4 +10,6 @@ class Inscripcion extends Model
     use HasFactory;
 
     protected $table = 'inscripciones';
+
+    protected $primaryKey = 'inscripcion_id';
 }

@@ -11,6 +11,8 @@ class Curso extends Model
 
     protected $table = 'cursos';
 
+    protected $primaryKey = 'curso_id';
+
     // Relación con la tabla "usuarios" (instructor -> usuario)
     public function instructor()
     {

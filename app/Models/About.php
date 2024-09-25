@@ -10,4 +10,7 @@ class About extends Model
     use HasFactory;
 
     protected $table = 'about';
+
+    // Define la clave primaria
+    protected $primaryKey = 'id_about';
 }
