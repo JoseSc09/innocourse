@@ -65,19 +65,8 @@ hamburderButton.addEventListener('click', function () {
     sidebar.classList.toggle('translate-x-0');
 });
 
-//Activar modal 
-const crudModalUser = document.getElementById('crud-modal-user');
-const bottonModalUser = document.getElementById('botton-modal-user')
-const closeModalUser = document.getElementById('close-modal-user');
-bottonModalUser.addEventListener('click', function () {
-    crudModalUser.classList.toggle('hidden');
-});
-closeModalUser.addEventListener('click', function () {
-    crudModalUser.classList.add('hidden');
-});
-
 // Input Change Avatar User
-const input = document.getElementById('user_avatar');
+const input = document.getElementById('imagen');
 const fileNameDisplay = document.getElementById('file_name');
 input.addEventListener('change', function () {
     if (input.files.length > 0) {
