@@ -15,19 +15,19 @@ class CategoriaSeeder extends Seeder
     {
         //
         $categoria = new Categoria();
-        $categoria->nombre_categoria = 'FrontEnd';
+        $categoria->nombre_categoria = 'frontend';
         $categoria->save();
 
         $categoria = new Categoria();
-        $categoria->nombre_categoria = 'Backend';
+        $categoria->nombre_categoria = 'backend';
         $categoria->save();
 
         $categoria = new Categoria();
-        $categoria->nombre_categoria = 'FullStack';
+        $categoria->nombre_categoria = 'fullStack';
         $categoria->save();
 
         $categoria = new Categoria();
-        $categoria->nombre_categoria = 'DevOps';
+        $categoria->nombre_categoria = 'devops';
         $categoria->save();
 
     }

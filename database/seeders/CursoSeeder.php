@@ -51,7 +51,7 @@ class CursoSeeder extends Seeder
         $curso->save();
 
         $curso = new Curso();
-        $curso->titulo = 'Base de datos';
+        $curso->titulo = 'Base de Datos';
         $curso->imagen = 'storage/images/cursos/base_de_datos.jpg';
         $curso->descripcion = 'Aprende a gestionar datos';
         $curso->precio = 69;

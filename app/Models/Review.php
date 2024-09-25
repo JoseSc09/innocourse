@@ -11,6 +11,8 @@ class Review extends Model
 
     protected $table = 'reviews';
 
+    protected $primaryKey = 'review_id';
+
     public function usuario(){
         return $this->belongsTo(User::class,'usuario_id','id');
     }

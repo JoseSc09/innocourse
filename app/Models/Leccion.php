@@ -10,4 +10,6 @@ class Leccion extends Model
     use HasFactory;
 
     protected $table = 'lecciones';
+
+    protected $primaryKey = 'leccion_id';
 }

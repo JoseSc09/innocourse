@@ -190,7 +190,7 @@ html.dark .enroll-button {
 }
 #dark-mode-toggle.active {
   background-color: #192231;
-  box-shadow: inset 0px 0px 8px 0px #6e6b80;
+  box-shadow: inset 0px 0px 5px #6e6b80;
 }
 #dark-mode-toggle.active .toggle{
   left: 35px;
