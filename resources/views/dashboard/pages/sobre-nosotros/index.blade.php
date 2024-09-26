@@ -27,17 +27,17 @@
                     <tr
                         class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                         <td class="px-6 py-4">
-                            {{ $dato->titulo }}
+                            {{ $dato->title }}
                         </td>
                         <td class="px-6 py-4 overflow-hidden text-ellipsis min-w-96">
-                            {{ $dato->texto }}
+                            {{ $dato->text }}
                         </td>
                         <td class="px-6 py-4">
-                            <img class="w-60 h-36 max-w-60 rounded-md object-cover" src="{{ asset($dato->imagen) }}"
-                                alt="{{ $dato->titulo }}">
+                            <img class="w-60 h-36 max-w-60 rounded-md object-cover" src="{{ asset($dato->image) }}"
+                                alt="{{ $dato->title }}">
                         </td>
                         <td class="px-6 py-4">
-                            <a href="{{ route('admin.sobre-nosotros.edit', $dato->id_about) }}"
+                            <a href="{{ route('admin.sobre-nosotros.edit', $dato) }}"
                                 class="font-medium text-green-600 dark:text-green-500 hover:underline text-2xl"><i
                                     class="fas fa-edit"></i></a>
                         </td>
