@@ -12,60 +12,52 @@ class AdminUsuarioController extends Controller
 
     public function index() {}
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create(Request $request)
     {
         $rol_id = intval($request->query('rol'));
         return view('dashboard.pages.usuarios.create', compact('rol_id'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
 
         // Validaciones
         $validatedData = $request->validate([
-            'nombre' => 'required|string|max:255',
-            'apellido' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
-            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'rol_id' => 'required|exists:roles,rol_id',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'rol_id' => 'required|exists:rols,id',
         ]);
 
         // Manejo de la imagen
-        if ($request->hasFile('imagen')) {
-            // Obtener la extensión de la imagen
-            $extension = $request->file('imagen')->getClientOriginalExtension();
-
-            // Crear el nombre del archivo usando un timestamp, el nombre de usuario y la extensión
-            $imageName = time() . '_' . $validatedData['username'] . '.' . $extension;
-
-            // Guardar la imagen en el directorio 'images/usuarios' y usar el nombre personalizado
-            $imagePath = $request->file('imagen')->storeAs('images/usuarios', $imageName, 'public');
-
-            // Guardar la ruta de la imagen en la base de datos
-            $validatedData['imagen'] = 'storage/' . $imagePath;
+        if ($request->hasFile('image')) {
+            // Guardar la imagen en el directorio 'images/users' con un nombre único
+            $imagePath = $request->file('image')->storeAs(
+                'images/users',
+                time() . '_' . $validatedData['username'] . '.' . $request->file('image')->getClientOriginalExtension(),
+                'public'
+            );
+            $validatedData['image'] = 'storage/' . $imagePath;
         } else {
-            // Si no se sube ninguna imagen, usar la imagen por defecto
-            $validatedData['imagen'] = 'storage/images/usuarios/user_default.png';
+            // Usar imagen por defecto
+            $validatedData['image'] = 'storage/images/users/user_default.png';
         }
 
         // Encriptar la contraseña
-        $validatedData['password'] = bcrypt($request->password);
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
         $validatedData['rol_id'] = intval($request->query('rol_id'));
+
         // Crear el usuario
-        User::create($validatedData);
-        // Obtener el rol correspondiente
-        $rol = Rol::where('rol_id', intval($request->query('rol_id')))->firstOrFail(); // Usar firstOrFail para obtener un solo rol
+        $user = User::create($validatedData);
+        
 
         // Redirigir con un mensaje de éxito
-        return redirect("/dashboard/usuarios/{$rol->nombre_rol}");
+        return redirect("/dashboard/usuarios/{$user->rol->rol_name}");
     }
 
     /**
@@ -103,55 +95,37 @@ class AdminUsuarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // Buscar Usuario
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'apellido' => 'required|string|max:255',
+        // Validar los datos
+        $validatedData = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username,' . $user->id,
             'email' => 'required|email|max:255|unique:users,email,' . $user->id,
-            'imagen' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Manejar la subida de una nueva imagen si está presente
-        if ($request->hasFile('imagen')) {
-            // Eliminar la imagen anterior si existe y no es la imagen por defecto
-            if ($user->imagen && $user->imagen !== 'storage/images/usuarios/user_default.png') {
-                // Obtener la ruta absoluta de la imagen anterior
-                $oldImagePath = public_path($user->imagen);
-
-                // Comprobar si el archivo existe y eliminarlo
-                if (file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                }
+        // Manejo de la nueva imagen
+        if ($request->hasFile('image')) {
+            if ($user->image !== 'storage/images/users/user_default.png') {
+                // Eliminar la imagen anterior si no es la por defecto
+                Storage::disk('public')->delete(str_replace('storage/', '', $user->image));
             }
 
-            // Obtener el archivo de la imagen
-            $image = $request->file('imagen');
-
-            // Definir el nombre del archivo
-            $imageName = time() . '_' . $user->username . '.' . $image->getClientOriginalExtension();
-
-            // Guardar la imagen en la carpeta 'storage/images/usuarios/'
-            $imagePath = $image->storeAs('images/usuarios', $imageName, 'public');
-
-            // Actualizar la ruta de la imagen en la base de datos
-            $user->imagen = 'storage/' . $imagePath;
+            // Guardar la nueva imagen
+            $imagePath = $request->file('image')->storeAs(
+                'images/users',
+                time() . '_' . $user->username . '.' . $request->file('image')->getClientOriginalExtension(),
+                'public'
+            );
+            $validatedData['image'] = 'storage/' . $imagePath;
         }
 
-        // Actualizar los otros campos
-        $user->nombre = $request->input('nombre');
-        $user->apellido = $request->input('apellido');
-        $user->username = $request->input('username');
-        $user->email = $request->input('email');
+        // Actualizar los datos del usuario
+        $user->update($validatedData);
 
-        //Guardar usuario
-        $user->save();
-
-        $rol = Rol::where('rol_id', $user->rol_id)->firstOrFail();
-
-        return redirect("/dashboard/usuarios/{$rol->nombre_rol}");
+        return redirect("/dashboard/usuarios/{$user->rol->rol_name}");
     }
 
     /**
