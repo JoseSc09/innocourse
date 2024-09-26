@@ -1,6 +1,6 @@
 <x-app-layout>
     <section
-        class="hero-section flex flex-col md:flex-row items-center justify-around py-12 bg-white border-b-2 border-gray-300 dark:bg-slate-800">
+        class="flex flex-col md:flex-row items-center justify-around py-12 bg-white border-b-2 border-gray-300 dark:bg-slate-800">
         <div class="content max-w-md md:max-w-xl text-left">
             <h1 class="text-4xl font-bold mb-6">Cambia tu realidad,<br> aprende online en vivo</h1>
             <a href="{{ route('payments.index') }}"
@@ -8,24 +8,22 @@
                 ahora</a>
             <p class="sub-text text-purple-700 mt-4">2 clases de prueba en tu primer curso</p>
         </div>
-        <div class="images flex flex-col md:max-w-lg">
-            <div class="main-image relative">
+        <div class="grid grid-cols-1 md:max-w-lg">
+            <div class="relative">
                 <img src="{{ Vite::image('claseVirtual1.jpg') }}" alt="Clase en vivo"
-                    class="h-50 md:h-62 w-[200%] rounded-lg border-2 border-black object-cover">
-                <div id="tooltip-jessica"
-                    class="tooltip absolute top-10 left-0 bg-black text-white p-2 rounded text-sm transform -translate-x-1/2">
+                    class="h-50 md:h-62 w-full rounded-lg border-2 border-black object-cover">
+                <div class="absolute top-10 left-3 lg:left-[-1.5rem] bg-black text-white p-2 rounded">
                     Jessica 15:31<br>Excelente clase!</div>
-                <div id="tooltip-juan"
-                    class="tooltip absolute top-12 right-0 bg-black text-white p-2 rounded text-sm w-28 text-left">Juan
-                    15:34<br>Hola profe!, tengo una consulta</div>
+                <div class="absolute top-12 right-3 lg:right-[-1.5rem] md:min-w-[10rem] bg-black text-white p-2 rounded text-sm w-28 text-center">
+                    Juan 15:34<br>Hola profe!, tengo una consulta</div>
             </div>
-            <div class="thumbnail-images flex justify-between space-x-2 mt-2">
+            <div class="grid grid-cols-3 gap-2 mt-2">
                 <img src="{{ Vite::image('claseVirtual2.jpg') }}" alt="Estudiante en clase"
-                    class="w-1/3 h-24 md:h-32 rounded-lg border-2 border-black object-cover">
-                <img src="{{ Vite::image('claseVirtual3.jpg') }}" alt="Clase en línea"
-                    class="w-1/3 h-24 md:h-32 rounded-lg border-2 border-black object-cover">
+                    class="w-full h-24 md:h-32 rounded-lg border-2 border-black object-cover">
+                <img src="{{ Vite::image('claseVirtual3.jpg') }}" alt="Clase en linea"
+                    class="w-full h-24 md:h-32 rounded-lg border-2 border-black object-cover">
                 <img src="{{ Vite::image('claseVirtual4.jpg') }}" alt="Grupo de estudio"
-                    class="w-1/3 h-24 md:h-32 rounded-lg border-2 border-black object-cover">
+                    class="w-full h-24 md:h-32 rounded-lg border-2 border-black object-cover">
             </div>
         </div>
     </section>
@@ -55,11 +53,11 @@
             ¿Qué quieres
             aprender?</h2>
         <div class="cursos-grid grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            @foreach ($cursos as $curso)
+            @foreach ($courses as $course)
                 <div class="curso p-6 rounded-lg hover:bg-purple-200 transition cursor-pointer border border-black dark:border-none"
                     style="background-color: rgba(151, 99, 246, 0.1);">
                     <span class="block text-lg dark:text-gray-100">Curso de</span>
-                    <span class="block text-2xl font-bold mt-2 dark:text-gray-100">⭐ {{ $curso->titulo }}</span>
+                    <span class="block text-2xl font-bold mt-2 dark:text-gray-100">⭐ {{ $course->title }}</span>
                 </div>
             @endforeach
         </div>
@@ -79,7 +77,8 @@
         <div class="info-grid grid grid-cols-1 md:grid-cols-2 gap-6 items-center ml-6 md:ml-16 lg:ml-24">
             <div class="info-text space-y-4">
                 @foreach ($features as $feature)
-                    <p class="flex items-center gap-6 p-4 dark:text-gray-100"> <i class="{{$feature['icon']}} fa-xl"></i>{{ $feature['content'] }}</p>
+                    <p class="flex items-center gap-6 p-4 dark:text-gray-100"> <i
+                            class="{{ $feature['icon'] }} fa-xl"></i>{{ $feature['content'] }}</p>
                 @endforeach
             </div>
             <div class="info-img px-4 md:px-8 lg:px-9">
@@ -92,21 +91,23 @@
     <div class="container mx-auto py-12 px-4">
         <h1 class="text-center text-3xl font-bold mb-8">¡Elige una de nuestras promociones!</h1>
         <div class="promo-box-container flex flex-wrap justify-center">
-            @foreach ($suscripciones as $promo)
-                <div class="promo-box w-full sm:w-80 p-6 m-4 rounded-lg shadow-lg bg-gray-50 dark:bg-[rgb(45,45,80)] border border-gray-200 dark:border-none">
+            @foreach ($subscriptions as $subscription)
+                <div
+                    class="promo-box w-full sm:w-80 p-6 m-4 rounded-lg shadow-lg bg-gray-50 dark:bg-[rgb(45,45,80)] border border-gray-200 dark:border-none">
                     <div class="promo-header mb-4 ">
                         <div class="promo-type text-sm text-gray-600 dark:text-gray-100">Suscripción</div>
                         <div class="promo-title text-2xl font-bold text-black dark:text-gray-100">
-                            {{ $promo->nombre_suscripcion }}</div>
+                            {{ $subscription->subscription_name }}</div>
                     </div>
                     <div class="promo-price text-xl text-gray-700 mb-4 dark:text-gray-100">
-                        <span>S/</span><span class="amount text-4xl font-bold">{{ $promo->precio }}</span><span>
+                        <span>S/</span><span class="amount text-4xl font-bold">{{ $subscription->price }}</span><span>
                             Soles</span>
-                        <span class="promo-duration block text-sm text-gray-600 dark:text-gray-100"> {{ $promo->num_cursos }} Curso de
-                            {{ $promo->duracion_meses }} meses</span>
+                        <span class="promo-duration block text-sm text-gray-600 dark:text-gray-100">
+                            {{ $subscription->course_count }} Curso de
+                            {{ $subscription->duration_months }} meses</span>
                     </div>
                     <div class="promo-description text-sm text-gray-600 mb-6 dark:text-gray-100">
-                        {{ $promo->descripcion }}
+                        {{ $subscription->description }}
                     </div>
                     <div class="yape flex items-center justify-end text-sm text-gray-600 dark:text-gray-100">
                         <p>Puedes pagar con</p>
