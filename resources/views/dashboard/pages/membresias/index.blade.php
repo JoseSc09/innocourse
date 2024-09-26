@@ -28,26 +28,26 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($suscripciones as $suscripcion)
+                @foreach ($subscriptions as $subscription)
                     <tr
                         class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                         <td class="px-6 py-4">
-                            {{ $suscripcion->nombre_suscripcion }}
+                            {{ $subscription->subscription_name }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $suscripcion->num_cursos }}
+                            {{ $subscription->course_count }}
                         </td>
                         <td class="px-6 py-4 min-w-28">
-                            S/ {{ $suscripcion->precio }}
+                            S/ {{ $subscription->price }}
                         </td>
                         <td class="px-6 py-4 ">
-                            {{ $suscripcion->duracion_meses }} meses
+                            {{ $subscription->duration_months }} meses
                         </td>
                         <td class="px-6 py-4 min-w-48">
-                            {{ $suscripcion->descripcion }}
+                            {{ $subscription->description }}
                         </td>
                         <td class="px-6 py-4">
-                            <a href="{{ route('admin.membresias.edit',$suscripcion->id_suscripcion) }}"
+                            <a href="{{ route('admin.membresias.edit',$subscription) }}"
                                 class="font-medium text-green-600 dark:text-green-500 hover:underline text-2xl"><i
                                     class="fas fa-edit"></i></a>
                         </td>
@@ -56,5 +56,5 @@
             </tbody>
         </table>
     </div>
-    {{ $suscripciones->links() }}
+    {{ $subscriptions->links() }}
 </x-dashboard-layout>

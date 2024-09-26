@@ -1,43 +1,43 @@
 <x-dashboard-layout>
     <!-- Modal body -->
-    <form class="p-4 md:p-5" method="POST"
-        action="{{ route('admin.membresias.update', $suscripcion->id_suscripcion) }}" enctype="multipart/form-data">
+    <form class="p-4 md:p-5" method="POST" action="{{ route('admin.membresias.update', $subscription) }}"
+        enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="grid gap-4 mb-4 grid-cols-3">
             <div class="col-span-3">
-                <label for="nombre_suscripcion"
+                <label for="subscription_name"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                <input type="text" name="nombre_suscripcion" id="nombre_suscripcion"
-                    value="{{ $suscripcion->nombre_suscripcion }}"
+                <input type="text" name="subscription_name" id="subscription_name"
+                    value="{{ $subscription->subscription_name }}"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-1">
-                <label for="num_cursos" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nº
+                <label for="course_count" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nº
                     Cursos</label>
-                <input type="number" name="num_cursos" id="num_cursos" value="{{ $suscripcion->num_cursos }}"
+                <input type="number" name="course_count" id="course_count" value="{{ $subscription->course_count }}"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-1">
-                <label for="duracion_meses"
+                <label for="duration_months"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Duracion <span
                         class="font-normal">(meses)</span></label>
-                <input type="number" name="duracion_meses" id="duracion_meses"
-                    value="{{ $suscripcion->duracion_meses }}"
+                <input type="number" name="duration_months" id="duration_months"
+                    value="{{ $subscription->duration_months }}"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-1">
-                <label for="precio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Precio
+                <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Precio
                     S/.</label>
-                <input type="number" name="precio" id="precio" value="{{ $suscripcion->precio }}"
+                <input type="number" name="price" id="price" value="{{ $subscription->price }}"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-3">
-                <label for="descripcion"
+                <label for="description"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contenido</label>
-                <textarea id="descripcion" rows="4" name="descripcion"
+                <textarea id="description" rows="4" name="description"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Escribe el contenido aqui...">{{ $suscripcion->descripcion }}</textarea>
+                    placeholder="Escribe el contenido aqui...">{{ $subscription->description }}</textarea>
             </div>
         </div>
 
