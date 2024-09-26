@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class Category extends Model
 {
-    use HasFactory;
-    protected $table = 'rols';
+    protected $table = 'categories';
 
     protected $fillable = [
-        'role_name',
+        'category_name', // Campos asignables en masa
     ];
 }

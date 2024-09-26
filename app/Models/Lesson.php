@@ -7,14 +7,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class About extends Model
+class Lesson extends Model
 {
     use HasFactory;
 
-    protected $table = 'about';
+    protected $table = 'lessons';
 
-    // Mutator para que solo la primera palabra tenga la primera letra en mayúsculas
-    protected function title(): Attribute
+    protected $fillable = [
+        'lesson_name',
+        'content',
+        'section_id',
+    ];
+
+    // Relación con la tabla "sections"
+    public function section()
+    {
+        return $this->belongsTo(Section::class, 'section_id', 'id');
+    }
+
+    protected function lessonName(): Attribute
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Str::ucfirst($value) : $value, // Al recuperar, capitaliza la primera letra de la primera palabra
@@ -22,11 +33,4 @@ class About extends Model
         );
     }
 
-    protected function text(): Attribute
-    {
-        return Attribute::make(
-            get: fn(?string $value) => $value ? Str::ucfirst($value) : $value, // Al recuperar, capitaliza la primera letra de la primera palabra
-            set: fn(string $value) => strtolower($value), // Al guardar, convierte todo a minúsculas
-        );
-    }
 }
