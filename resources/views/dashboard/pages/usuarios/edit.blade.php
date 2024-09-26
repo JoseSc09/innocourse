@@ -1,19 +1,19 @@
 <x-dashboard-layout>
     <!-- Modal body -->
-    <form class="p-4 md:p-5" method="POST" action="{{ route('admin.usuarios.update', $user->id) }}"
+    <form class="p-4 md:p-5" method="POST" action="{{ route('admin.usuarios.update', $user) }}"
         enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="grid gap-4 mb-4 grid-cols-2">
             <div class="col-span-2 sm:col-span-1">
-                <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                <input type="text" name="nombre" id="nombre" value="{{ $user->nombre }}"
+                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                <input type="text" name="first_name" id="first_name" value="{{ $user->first_name }}"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-2 sm:col-span-1">
-                <label for="apellido"
+                <label for="last_name"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido</label>
-                <input type="apellido" name="apellido" id="apellido" value="{{ $user->apellido }}"
+                <input type="last_name" name="last_name" id="last_name" value="{{ $user->last_name }}"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-2">
@@ -29,16 +29,16 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-2 flex gap-5 items-center">
-                <img class="w-36 h-36 rounded-full object-cover" src="{{ asset($user->imagen) }}" alt="">
+                <img class="w-36 h-36 rounded-full object-cover" src="{{ asset($user->image) }}" alt="">
                 <div>
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto de
                         perfil</label>
                     <!-- Input de archivo oculto -->
-                    <input class="hidden" aria-describedby="user_avatar_help" id="imagen" name="imagen"
+                    <input class="hidden" aria-describedby="user_avatar_help" id="image" name="image"
                         type="file">
 
                     <!-- Label personalizado para el input de archivo -->
-                    <label for="imagen" id="file_label"
+                    <label for="image" id="file_label"
                         class="text-md text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-200 dark:text-white focus:outline-none dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 p-2 text-center dark:hover:bg-gray-800/[.50]">
                         Seleccionar archivo
                     </label>

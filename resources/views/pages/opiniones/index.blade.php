@@ -27,19 +27,19 @@
                 <div class="article-opi bg-[#9763f8] bg-opacity-30 p-4 rounded-lg">
                     <div class="conjunto flex items-center justify-between mb-2">
                         <div class="image">
-                            <img src="{{ asset($review->usuario->imagen) }}" alt="user"
+                            <img src="{{ asset($review->user->image) }}" alt="user"
                                 class="user w-16 h-16 rounded-full">
                         </div>
                         <div class="usuario ml-4">
                             <h3 class="text-lg dark:text-white">
-                                {{ $review->usuario->nombre . ' ' . $review->usuario->apellido }}</h3>
-                            <p class="correo text-sm dark:text-gray-300">{{ '@' . $review->usuario->username }}</p>
+                                {{ $review->user->first_name . ' ' . $review->user->last_name }}</h3>
+                            <p class="correo text-sm dark:text-gray-300">{{ '@' . $review->user->username }}</p>
                         </div>
                         <div class="ml-auto flex items-center">
-                            <x-star-rating :rating="$review->calificacion" />
+                            <x-star-rating :rating="$review->rating" />
                         </div>
                     </div>
-                    <p class="opiniones text-lg dark:text-gray-300">{{ $review->comentario }}</p>
+                    <p class="opiniones text-lg dark:text-gray-300">{{ $review->comment }}</p>
                 </div>
             @endforeach
         </div>
@@ -58,13 +58,13 @@
                 <div class="contentrBx relative mb-2">
                     <div
                         class="label bg-[#171C2F] text-white cursor-pointer p-4 text-lg dark:bg-yellow-600 dark:text-black flex items-center justify-between">
-                        {{ $faq->pregunta }}
+                        {{ $faq->question }}
                         <span class="plus-sign text-2xl transition-opacity duration-300">+</span>
                         <span class="minus-sign text-2xl hidden transition-opacity duration-300">-</span>
                     </div>
                     <div
                         class="content overflow-hidden transition-max-height duration-500 ease-in-out max-h-0 bg-white dark:bg-slate-800 text-black dark:text-[#faf1f1]">
-                        <p class="p-4">{{ $faq->respuesta }}</p>
+                        <p class="p-4">{{ $faq->answer }}</p>
                     </div>
                 </div>
             @endforeach

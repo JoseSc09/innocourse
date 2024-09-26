@@ -39,7 +39,7 @@
                         class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-green-600"
                         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                         data-dropdown-placement="bottom">
-                        <img class="w-12 h-12 rounded-full object-cover" src="{{ asset(Auth::user()->imagen) }}"
+                        <img class="w-12 h-12 rounded-full object-cover" src="{{ asset(Auth::user()->image) }}"
                             alt="foto de usuario">
                     </button>
                     <!-- End User Avatar-->
@@ -48,7 +48,7 @@
                     <div class="absolute shadow-xl min-w-44 right-4 top-16 mt-2 z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg dark:bg-gray-700 dark:divide-gray-600"
                         id="user-dropdown">
                         <div class="px-4 py-3">
-                            <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->nombre }}</span>
+                            <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->first_name }}</span>
                             <span
                                 class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email }}</span>
                         </div>
@@ -56,7 +56,7 @@
                             @if (Auth::user()->rol_id === 1)
                                 <li>
                                     <a href="{{ route('home.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Inno Course</a>
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">InnoCourse</a>
                                 </li>
                             @endif
                             <li>

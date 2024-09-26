@@ -7,14 +7,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class About extends Model
+class Subscription extends Model
 {
     use HasFactory;
 
-    protected $table = 'about';
+    protected $fillable = [
+        'course_count',
+        'subscription_name',
+        'price',
+        'duration_months',
+        'description',
+    ];
 
-    // Mutator para que solo la primera palabra tenga la primera letra en mayúsculas
-    protected function title(): Attribute
+    protected function subscriptionName(): Attribute
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Str::ucfirst($value) : $value, // Al recuperar, capitaliza la primera letra de la primera palabra
@@ -22,11 +27,12 @@ class About extends Model
         );
     }
 
-    protected function text(): Attribute
+    protected function description(): Attribute
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Str::ucfirst($value) : $value, // Al recuperar, capitaliza la primera letra de la primera palabra
             set: fn(string $value) => strtolower($value), // Al guardar, convierte todo a minúsculas
         );
     }
+
 }

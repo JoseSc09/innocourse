@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Suscripcion;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 
 class AdminMembresiaController extends Controller
@@ -12,8 +12,8 @@ class AdminMembresiaController extends Controller
      */
     public function index()
     {
-        $suscripciones = Suscripcion::orderBy("created_at", "asc")->paginate(10);
-        return view("dashboard.pages.membresias.index", compact("suscripciones"));
+        $subscriptions = Subscription::orderBy("created_at", "asc")->paginate(10);
+        return view("dashboard.pages.membresias.index", compact("subscriptions"));
     }
 
     /**
@@ -45,8 +45,8 @@ class AdminMembresiaController extends Controller
      */
     public function edit(string $id)
     {
-        $suscripcion = Suscripcion::find($id);
-        return view("dashboard.pages.membresias.edit", compact("suscripcion"));
+        $subscription = Subscription::find($id);
+        return view("dashboard.pages.membresias.edit", compact("subscription"));
     }
 
     /**
@@ -54,28 +54,21 @@ class AdminMembresiaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // Encuentra la suscripción actual
-        $suscripcion = Suscripcion::findOrFail($id);
-
+        // Encuentra la suscripción actual o lanza un error 404 si no se encuentra
+        $subscription = Subscription::findOrFail($id);
+    
         // Validar los datos del formulario
-        $request->validate([
-            'num_cursos' => 'required|integer|min:1', // Número entero mínimo 1
-            'nombre_suscripcion' => 'required|string|max:255|unique:suscripciones,nombre_suscripcion,' . $suscripcion->id_suscripcion . ',id_suscripcion',
-            // Unicidad en 'nombre_suscripcion' excepto la suscripción actual
-            'precio' => 'required|numeric|min:0.01', // Precio mínimo 0.01
-            'duracion_meses' => 'required|integer|min:1|max:36', // Duración entre 1 y 36 meses
-            'descripcion' => 'nullable|string|max:2000', // Descripción opcional con máximo 2000 caracteres
+        $validatedData = $request->validate([
+            'course_count' => 'required|integer|min:1', // Número de cursos mínimo 1
+            'subscription_name' => 'required|string|max:255|unique:subscriptions,subscription_name,' . $subscription->id, // Unicidad excluyendo el actual
+            'price' => 'required|numeric|min:0.01', // Precio mínimo de 0.01
+            'duration_months' => 'required|integer|min:1|max:36', // Duración entre 1 y 36 meses
+            'description' => 'nullable|string|max:2000', // Descripción opcional con máximo 2000 caracteres
         ]);
-
-        // Actualizar la suscripción
-        $suscripcion->update([
-            'num_cursos' => $request->num_cursos,
-            'nombre_suscripcion' => $request->nombre_suscripcion,
-            'precio' => $request->precio,
-            'duracion_meses' => $request->duracion_meses,
-            'descripcion' => $request->descripcion,
-        ]);
-
+    
+        // Actualizar la suscripción con los datos validados
+        $subscription->update($validatedData);
+    
         // Redirigir al usuario con un mensaje de éxito
         return redirect()->route('admin.membresias.index')->with('success', 'Suscripción actualizada con éxito.');
     }

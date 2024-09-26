@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Curso;
-use App\Models\Suscripcion;
+use App\Models\Course;
+use App\Models\Subscription;
 
 class HomeController extends Controller
 {
@@ -62,9 +61,9 @@ class HomeController extends Controller
             ],
         ];
         
-        $suscripciones = Suscripcion::all();
+        $subscriptions = Subscription::all();
         
-        $cursos = Curso::take(6)->get();
-        return view('index', compact('empresas','cursos','features','suscripciones'));
+        $courses = Course::take(6)->get();
+        return view('index', compact('empresas','courses','features','subscriptions'));
     }
 }

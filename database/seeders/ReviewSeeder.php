@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Review;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ReviewSeeder extends Seeder
@@ -14,66 +13,66 @@ class ReviewSeeder extends Seeder
     public function run(): void
     {
         $review = new Review();
-        $review->curso_id = 1;
-        $review->usuario_id = 6;
-        $review->calificacion= 5;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 1;
+        $review->user_id = 6;
+        $review->rating = 5;
+        $review->comment = "increíble curso. aprendí mucho sobre JavaScript y la forma en que se presenta el contenido es muy clara.";
         $review->save();
 
         $review = new Review();
-        $review->curso_id = 1;
-        $review->usuario_id = 7;
-        $review->calificacion= 4;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 1;
+        $review->user_id = 7;
+        $review->rating = 4;
+        $review->comment = "buen curso, aunque me gustaría que incluyera más ejercicios prácticos.";
         $review->save();
 
         $review = new Review();
-        $review->curso_id = 1;
-        $review->usuario_id = 8;
-        $review->calificacion= 3;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 1;
+        $review->user_id = 8;
+        $review->rating = 3;
+        $review->comment = "curso interesante, pero la duración fue un poco corta para la cantidad de temas.";
         $review->save();
 
         $review = new Review();
-        $review->curso_id = 1;
-        $review->usuario_id = 9;
-        $review->calificacion= 3;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 1;
+        $review->user_id = 9;
+        $review->rating = 3;
+        $review->comment = "me gustó, pero podría mejorar en la parte de recursos adicionales.";
         $review->save();
 
         $review = new Review();
-        $review->curso_id = 2;
-        $review->usuario_id = 7;
-        $review->calificacion= 5;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 2;
+        $review->user_id = 7;
+        $review->rating = 5;
+        $review->comment = "excelente curso de desarrollo web. cada lección fue muy útil y clara.";
         $review->save();
 
         $review = new Review();
-        $review->curso_id = 3;
-        $review->usuario_id = 8;
-        $review->calificacion= 5;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 3;
+        $review->user_id = 8;
+        $review->rating = 5;
+        $review->comment = "el diseño UX/UI es un tema apasionante, y este curso lo cubrió a la perfección.";
         $review->save();
 
         $review = new Review();
-        $review->curso_id = 4;
-        $review->usuario_id = 9;
-        $review->calificacion= 5;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 4;
+        $review->user_id = 9;
+        $review->rating = 5;
+        $review->comment = "las metodologías ágiles son vitales hoy en día. Este curso me ayudó a entender su aplicación.";
         $review->save();
 
         $review = new Review();
-        $review->curso_id = 5;
-        $review->usuario_id = 10;
-        $review->calificacion= 5;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 5;
+        $review->user_id = 10;
+        $review->rating = 5;
+        $review->comment = "un curso muy completo sobre bases de datos. Perfecto para principiantes.";
         $review->save();
 
         $review = new Review();
-        $review->curso_id = 6;
-        $review->usuario_id = 11;
-        $review->calificacion= 5;
-        $review->comentario= "Los cursos de InnoCourse han transformado mi enfoque profesional. La calidad del contenido y la experiencia de los instructores son excepcionales.";
+        $review->course_id = 6;
+        $review->user_id = 11;
+        $review->rating = 5;
+        $review->comment = "aprendí Python de una manera muy efectiva. ¡Lo recomiendo totalmente!";
         $review->save();
     }
 }

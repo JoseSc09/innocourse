@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->id('review_id');
-            $table->foreignId('curso_id')->constrained('cursos','curso_id')->onDelete('cascade');
-            $table->foreignId('usuario_id')->constrained('users','id')->onDelete('cascade');
-            $table->integer('calificacion')->unsigned()->check('calificacion >= 1 AND calificacion <= 5');
-            $table->text('comentario')->nullable();
+            $table->id(); // ID sin prefijo
+            $table->foreignId('course_id')->constrained('courses', 'id')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users', 'id')->onDelete('cascade');
+            $table->unsignedInteger('rating')->check('rating >= 1 AND rating <= 5');
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

@@ -14,18 +14,16 @@ class RolSeeder extends Seeder
     public function run(): void
     {
         $rol = new Rol();
-        $rol->nombre_rol = 'administrador';
+        $rol->rol_name = 'administrador';
         $rol->save();
         
         $rol = new Rol();
-        $rol->nombre_rol = 'instructor';
+        $rol->rol_name = 'instructor';
         $rol->save();
 
         $rol = new Rol();
-        $rol->nombre_rol = 'estudiante';
+        $rol->rol_name = 'estudiante';
         $rol->save();
-
-
 
     }
 }

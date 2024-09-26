@@ -29,24 +29,24 @@
 
                     {{-- Input Nombre --}}
                     <div class="sm:col-span-3">
-                        <label for="nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
+                        <label for="first_name" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
                         <div class="mt-2">
-                            <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}"
+                            <input type="text" id="first_name" name="first_name" value="{{ old('first_name') }}"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
-                        @error('nombre')
+                        @error('first_name')
                             <p>{{ $message }}</p>
                         @enderror
                     </div>
 
                     {{-- Input Apellido --}}
                     <div class="sm:col-span-3">
-                        <label for="apellido" class="block text-sm font-medium leading-6 text-gray-900">Apellido</label>
+                        <label for="last_name" class="block text-sm font-medium leading-6 text-gray-900">Apellido</label>
                         <div class="mt-2">
-                            <input type="text" id="apellido" name="apellido" value="{{ old('apellido') }}"
+                            <input type="text" id="last_name" name="last_name" value="{{ old('last_name') }}"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
-                        @error('apellido')
+                        @error('last_name')
                             <p>{{ $message }}</p>
                         @enderror
                     </div>

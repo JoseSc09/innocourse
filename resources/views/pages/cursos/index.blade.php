@@ -48,15 +48,15 @@
             </select>
         </div>
         <div class="courses-list">
-            @foreach ($cursos as $curso)
+            @foreach ($courses as $course)
                 <div class="course-card">
-                    <img src="{{ asset($curso->imagen) }}" alt="Imagen del curso">
-                    <h2>{{ $curso->titulo }}</h2>
-                    <p>{{ $curso->descripcion }}</p>
+                    <img src="{{ asset($course->image) }}" alt="Imagen Curso {{$course->title}}">
+                    <h2>{{ $course->title }}</h2>
+                    <p>{{ $course->description }}</p>
                     <div class="rating">
-                        <x-star-rating :rating="$curso->reviews_avg_calificacion" />
+                        <x-star-rating :rating="$course->reviews_avg_rating" />
                     </div>
-                    <div class="price">S/ {{ $curso->precio }}</div>
+                    <div class="price">S/ {{ $course->price }}</div>
                     <a href="{{ route('payments.index') }}" class="enroll-button">Inscribete!</a>
                 </div>
             @endforeach
