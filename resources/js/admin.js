@@ -66,7 +66,7 @@ hamburderButton.addEventListener('click', function () {
 });
 
 // Input Change Avatar User
-const input = document.getElementById('imagen');
+const input = document.getElementById('image');
 const fileNameDisplay = document.getElementById('file_name');
 input.addEventListener('change', function () {
     if (input.files.length > 0) {
