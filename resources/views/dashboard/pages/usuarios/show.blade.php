@@ -42,14 +42,14 @@
                     <tr
                         class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                         <td class="px-6 py-4">
-                            <img class="w-12 h-12 rounded-full object-cover" src="{{ asset($user->imagen) }}"
+                            <img class="w-12 h-12 rounded-full object-cover" src="{{ asset($user->image) }}"
                                 alt="Avatar {{ $user->username }}">
                         </td>
                         <td class="px-6 py-4">
-                            {{ $user->nombre }}
+                            {{ $user->first_name }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $user->apellido }}
+                            {{ $user->last_name }}
                         </td>
                         <td class="px-6 py-4">
                             {{ $user->username }}
@@ -59,7 +59,7 @@
                         </td>
                         @if ($rol_id !== 'estudiante')
                             <td class="px-6 py-4">
-                                <a href="{{ route('admin.usuarios.edit', $user->id) }}"
+                                <a href="{{ route('admin.usuarios.edit', $user) }}"
                                     class="font-medium text-green-600 dark:text-green-500 hover:underline text-2xl"><i
                                         class="fas fa-edit"></i></a>
                             </td>
