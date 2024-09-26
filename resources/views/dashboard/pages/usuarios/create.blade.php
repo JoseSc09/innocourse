@@ -5,14 +5,14 @@
         @method('POST')
         <div class="grid gap-4 mb-4 grid-cols-2">
             <div class="col-span-2 sm:col-span-1">
-                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                <input type="text" name="first_name" id="first_name"
+                <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                <input type="text" name="nombre" id="nombre"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-2 sm:col-span-1">
-                <label for="last_name"
+                <label for="apellido"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido</label>
-                <input type="last_name" name="last_name" id="last_name"
+                <input type="apellido" name="apellido" id="apellido"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
             </div>
             <div class="col-span-2">
@@ -46,11 +46,11 @@
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto de
                         perfil</label>
                     <!-- Input de archivo oculto -->
-                    <input class="hidden" aria-describedby="user_avatar_help" id="image" name="image"
+                    <input class="hidden" aria-describedby="user_avatar_help" id="imagen" name="imagen"
                         type="file">
 
                     <!-- Label personalizado para el input de archivo -->
-                    <label for="image" id="file_label"
+                    <label for="imagen" id="file_label"
                         class="text-md text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-200 dark:text-white focus:outline-none dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 p-2 text-center dark:hover:bg-gray-800/[.50]">
                         Seleccionar archivo
                     </label>

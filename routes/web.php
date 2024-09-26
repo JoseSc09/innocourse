@@ -18,6 +18,7 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/cursos', [CoursesController::class, 'index'])->name('courses.index');
+Route::get('/cursos/{curso}', [CoursesController::class, 'show'])->name('courses.show');
 Route::get('/sobre-nosotros', [AboutController::class, 'index'])->name('about.index');
 Route::get('/opiniones', [OpinionsController::class, 'index'])->name('opinions.index');
 Route::get('/pagos', [PaymentsController::class, 'index'])->name('payments.index');

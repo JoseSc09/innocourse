@@ -11,4 +11,9 @@ class CoursesController extends Controller
         $courses = Course::withAvg('reviews', 'rating')->get();
         return view('pages.cursos.index',compact('courses'));
     }
+
+    public function show($id){
+        $course = Course::find($id);
+        return view('pages.cursos.show',compact('course'));
+    }
 }
