@@ -20,7 +20,7 @@
                 <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-green-600"
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                     data-dropdown-placement="bottom">
-                    <img class="w-12 h-12 rounded-full object-cover" src="{{ asset(Auth::user()->imagen) }}"
+                    <img class="w-12 h-12 rounded-full object-cover" src="{{ asset(Auth::user()->image) }}"
                         alt="foto de usuario">
                 </button>
                 <!-- End User Avatar-->
@@ -29,7 +29,7 @@
                 <div class="absolute shadow-xl right-20 min-w-44 top-20 mt-2 z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg dark:bg-gray-700 dark:divide-gray-600"
                     id="user-dropdown">
                     <div class="px-4 py-3">
-                        <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->nombre }}</span>
+                        <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->first_name }}</span>
                         <span
                             class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email }}</span>
                     </div>
