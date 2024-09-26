@@ -12,7 +12,7 @@ class AdminSobreNosotrosController extends Controller
      */
     public function index()
     {
-        $about = About::orderBy("id_about", "asc")->paginate(10);
+        $about = About::orderBy("id", "asc")->paginate(10);
         return view("dashboard.pages.sobre-nosotros.index", compact("about"));
     }
 
@@ -42,8 +42,8 @@ class AdminSobreNosotrosController extends Controller
      */
     public function edit(string $id)
     {
-        $data = About::where("id_about", $id)->first();
-        return view("dashboard.pages.sobre-nosotros.edit", compact("data"));
+        $about = About::find( $id );
+        return view("dashboard.pages.sobre-nosotros.edit", compact("about"));
     }
 
     /**
@@ -51,19 +51,19 @@ class AdminSobreNosotrosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = About::where("id_about", $id)->firstOrFail();
+        $about = About::find($id);
         $request->validate([
-            'titulo' => 'required|string|max:255',
-            'texto' => 'required|string|max:5255',
-            'imagen' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title' => 'required|string|max:255',
+            'text' => 'required|string|max:5255',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         // Manejar la subida de una nueva imagen si está presente
-        if ($request->hasFile('imagen')) {
+        if ($request->hasFile('image')) {
             // Eliminar la imagen anterior si existe
-            if ($data->imagen) {
+            if ($about->imagen) {
                 // Obtener la ruta absoluta de la imagen anterior
-                $oldImagePath = public_path($data->imagen);
+                $oldImagePath = public_path($about->imagen);
 
                 // Comprobar si el archivo existe y eliminarlo
                 if (file_exists($oldImagePath)) {
@@ -72,23 +72,23 @@ class AdminSobreNosotrosController extends Controller
             }
 
             // Obtener el archivo de la imagen
-            $image = $request->file('imagen');
+            $image = $request->file('image');
 
             // Definir el nombre del archivo
-            $imageName = time() . '_' . $data->titulo . '.' . $image->getClientOriginalExtension();
+            $imageName = time() . '_' . $about->title . '.' . $image->getClientOriginalExtension();
 
             // Guardar la imagen en la carpeta 'storage/images/usuarios/'
-            $imagePath = $image->storeAs('images/usuarios', $imageName, 'public');
+            $imagePath = $image->storeAs('images/users', $imageName, 'public');
 
             // Actualizar la ruta de la imagen en la base de datos
-            $data->imagen = 'storage/' . $imagePath;
+            $about->imagen = 'storage/' . $imagePath;
         }
         // Actualizar los otros campos
-        $data->titulo = $request->input('titulo');
-        $data->texto = $request->input('texto');
+        $about->title = $request->input('title');
+        $about->text = $request->input('text');
 
         //Guardar usuario
-        $data->save();
+        $about->save();
 
         return redirect()->route('admin.sobre-nosotros.index');
     }
