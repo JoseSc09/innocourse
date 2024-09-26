@@ -57,7 +57,7 @@
                         <x-star-rating :rating="$course->reviews_avg_rating" />
                     </div>
                     <div class="price">S/ {{ $course->price }}</div>
-                    <a href="{{ route('payments.index') }}" class="enroll-button">Inscribete!</a>
+                    <a href="{{ route('courses.show',$course) }}" class="enroll-button">Más información!</a>
                 </div>
             @endforeach
         </div>
