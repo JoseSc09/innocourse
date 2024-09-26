@@ -1,6 +1,14 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Quitar estilos de inputs */
+input {
+  border: none;
+  outline: none;
+}
 
 /* Decorativos de medio circulo */
 .circle-first,
@@ -165,7 +173,7 @@ html.dark .enroll-button {
 
 /* Toggle Dark Mode */
 
-.toggle-container{
+.toggle-container {
   background-color: #f8f8f8;
   position: relative;
   box-shadow: inset 0px 0px 6px #1e293b;
@@ -173,7 +181,7 @@ html.dark .enroll-button {
   cursor: pointer;
 }
 
-.toggle{
+.toggle {
   position: absolute;
   top: 0;
   left: 0;
@@ -183,23 +191,27 @@ html.dark .enroll-button {
   box-shadow: 2px 2px 4px #c4c4c4, -2px -2px 4px #fff;
   transition: left ease-in-out .3s;
 }
-@media (min-width: 768px){
-  .toggle{
+
+@media (min-width: 768px) {
+  .toggle {
     box-shadow: 3px 3px 8px #c4c4c4, -3px -3px 8px #fff;
   }
 }
+
 #dark-mode-toggle.active {
   background-color: #192231;
   box-shadow: inset 0px 0px 5px #6e6b80;
 }
-#dark-mode-toggle.active .toggle{
+
+#dark-mode-toggle.active .toggle {
   left: 35px;
   background-color: #1e293b;
-  box-shadow: -2px 2px 3px  #6e6b80;
+  box-shadow: -2px 2px 3px #6e6b80;
   transition: left ease-in-out .3s;
 }
-@media (min-width: 768px){
-  #dark-mode-toggle.active .toggle{
+
+@media (min-width: 768px) {
+  #dark-mode-toggle.active .toggle {
     left: 32px;
   }
 }
