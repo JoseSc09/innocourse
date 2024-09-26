@@ -1,42 +1,29 @@
 <x-app-layout>
     <div class="container mx-auto shadow-md dark:shadow-none dark:text-gray-200">
         <div class="bg-white p-6 dark:bg-slate-800">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
-                <div class="rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ asset($principal->imagen) }}"
-                        alt="Imagen de header">
+            @foreach ($sections as $section)
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12 {{ $section['reverse'] ? 'md:flex-row-reverse' : '' }}">
+                    <!-- Imagen -->
+                    <div class="{{ $section['reverse'] ? 'md:order-last' : '' }} rounded-lg overflow-hidden">
+                        <img class="h-72 w-full object-cover object-center" src="{{ asset($section['data']->image) }}"
+                            alt="Imagen de {{ strtolower($section['data']->title) }}">
+                    </div>
+
+                    <!-- Texto -->
+                    <div
+                        class="flex flex-col justify-center lg:col-span-2 text-left {{ $section['reverse'] ? 'text-right' : 'text-left' }}">
+                        <h2
+                            class="font-sans font-bold text-xl lg:text-3xl uppercase mb-4 {{ $section['reverse'] ? 'text-left' : 'text-right' }}">
+                            {{ $section['data']->title }}
+                        </h2>
+                        <p
+                            class="lg:text-xl md:text-base text-left md:leading-relaxed lg:leading-loose {{ $section['reverse'] ? 'text-left' : 'text-right' }}">
+                            {{ $section['data']->text }}
+                        </p>
+                    </div>
                 </div>
-                <div class="lg:col-span-2 flex flex-col justify-around">
-                    <h1 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">
-                        {{ $principal->titulo }}</h1>
-                    <p class="lg:text-xl text-center md:leading-relaxed lg:leading-loose md:text-end">
-                        {{ $principal->texto }}</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
-                <div class="lg:col-start-3 md:col-start-2 md:row-start-1 rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ asset($mision->imagen) }}"
-                        alt="Imagen de misión">
-                </div>
-                <div class="lg:col-span-2 flex flex-col justify-around md:col-start-1">
-                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-start">
-                        {{ $mision->titulo }}</h2>
-                    <p class="lg:text-xl text-center md:leading-relaxed lg:leading-loose md:text-start">
-                        {{ $mision->texto }}</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6 md:mb-12">
-                <div class="rounded-lg overflow-hidden">
-                    <img class="h-72 w-full object-cover object-center" src="{{ asset($vision->imagen) }}"
-                        alt="Imagen de visión">
-                </div>
-                <div class="lg:col-span-2 flex flex-col justify-around">
-                    <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center md:text-end">
-                        {{ $vision->titulo }}</h2>
-                    <p class="lg:text-xl text-center md:text-end md:leading-relaxed lg:leading-loose">
-                        {{ $vision->texto }}</p>
-                </div>
-            </div>
+            @endforeach
             <div class="my-28">
                 <h2 class="font-sans font-bold text-xl lg:text-3xl uppercase text-center">Disponemos de Profesionales
                     Calificados</h2>
@@ -48,16 +35,16 @@
                     de calidad, innovadora y relevante. Su enfoque práctico y actualizado asegura el mejor apoyo y
                     orientación para el éxito de nuestros estudiantes.</p>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    @foreach ($cursos as $curso)
+                    @foreach ($courses as $course)
                         <div
                             class="max-w-sm bg-gray-50 dark:bg-[rgb(45,45,80)] border border-gray-300 rounded-lg shadow-lg dark:border-none dark:border-gray-900 ">
-                            <img class="rounded-t-lg" src="{{ asset($curso->instructor->imagen) }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset($course->instructor->image) }}" alt="" />
                             <div class="p-5">
                                 <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {{ $curso->instructor->nombre . ' ' . $curso->instructor->apellido }}</h5>
+                                    {{ $course->instructor->first_name . ' ' . $course->instructor->last_name }}</h5>
                                 <span
-                                    class="text-sm text-gray-600 tracking-tight dark:text-gray-400">{{ $curso->nombre }}</span>
-                                <p class="my-3 font-normal text-gray-700 dark:text-gray-400">Curso {{ $curso->titulo }}
+                                    class="text-sm text-gray-600 tracking-tight dark:text-gray-400">{{ $course->name }}</span>
+                                <p class="my-3 font-normal text-gray-700 dark:text-gray-400">Curso {{ $course->title }}
                                 </p>
                                 <a href="{{ route('courses.index') }}"
                                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
