@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inscripciones', function (Blueprint $table) {
-            $table->id('inscripcion_id');
-            $table->foreignId('usuario_id')->constrained('users','id')->onDelete('cascade');
-            $table->foreignId('curso_id')->constrained('cursos','curso_id')->onDelete('cascade');
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->id(); 
+            $table->integer('course_count');
+            $table->string('subscription_name');
+            $table->decimal('price', 8, 2);
+            $table->integer('duration_months');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inscripciones');
+        Schema::dropIfExists('subscriptions');
     }
 };
