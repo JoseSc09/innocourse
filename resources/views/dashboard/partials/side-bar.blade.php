@@ -48,7 +48,8 @@
                     <div class="absolute shadow-xl min-w-44 right-4 top-16 mt-2 z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg dark:bg-gray-700 dark:divide-gray-600"
                         id="user-dropdown">
                         <div class="px-4 py-3">
-                            <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->first_name }}</span>
+                            <span
+                                class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->first_name }}</span>
                             <span
                                 class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email }}</span>
                         </div>
@@ -89,18 +90,12 @@
                     </svg>
                 </button>
                 <ul id="dropdown-users-side-bar" class="hidden py-2 space-y-2">
-                    <li>
-                        <a href="{{ route('admin.usuarios.show', 'administrador') }}"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Administradores</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('admin.usuarios.show', 'instructor') }}"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Instructores</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('admin.usuarios.show', 'estudiante') }}"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Estudiantes</a>
-                    </li>
+                    @foreach ($rols as $rol)
+                        <li>
+                            <a href="{{ route('admin.usuarios.show', $rol) }}"
+                                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 capitalize">{{ $rol->rol_name }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </li>
 

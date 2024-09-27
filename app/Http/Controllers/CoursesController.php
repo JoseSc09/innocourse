@@ -8,12 +8,12 @@ use App\Models\Course;
 class CoursesController extends Controller
 {
     public function index(){
-        $courses = Course::withAvg('reviews', 'rating')->get();
+        $courses = Course::withAvg('reviews', 'rating')->paginate(8);
         return view('pages.cursos.index',compact('courses'));
     }
 
-    public function show($id){
-        $course = Course::find($id);
+    public function show($slug){
+        $course = Course::where('slug',$slug)->withAvg('reviews', 'rating')->first(); 
         return view('pages.cursos.show',compact('course'));
     }
 }

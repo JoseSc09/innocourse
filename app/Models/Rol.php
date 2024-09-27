@@ -11,6 +11,11 @@ class Rol extends Model
     protected $table = 'rols';
 
     protected $fillable = [
-        'role_name',
+        'rol_name',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'rol_name';
+    }
 }

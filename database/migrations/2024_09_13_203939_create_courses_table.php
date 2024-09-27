@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id(); 
             $table->string('image')->nullable(); 
-            $table->string('title'); 
+            $table->string('title');
+            $table->string('slug')->unique(); 
             $table->text('description')->nullable(); 
             $table->decimal('price', 10, 2); 
             $table->foreignId('instructor_id')->nullable()->constrained('users', 'id')->onDelete('set null'); // Constrain a users

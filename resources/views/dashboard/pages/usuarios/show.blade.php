@@ -1,10 +1,10 @@
 <x-dashboard-layout>
     <h1 class="capitalize">
-        {{ $rol_id }}
+        {{ $rol->rol_name }}
     </h1>
-    @if ($rol_id !== 'estudiante')
+    @if ($rol->rol_name !== 'estudiante')
         <div class="mb-6">
-            <a href="{{ route('admin.usuarios.create', ['rol' => $id]) }}"
+            <a href="{{ route('admin.usuarios.create') }}"
                 class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Añadir
             </a>
@@ -30,7 +30,7 @@
                     <th scope="col" class="px-6 py-3">
                         Email
                     </th>
-                    @if ($rol_id !== 'estudiante')
+                    @if ($rol->rol_name !== 'estudiante')
                         <th scope="col" class="px-6 py-3">
                             Acción
                         </th>
@@ -57,7 +57,7 @@
                         <td class="px-6 py-4">
                             {{ $user->email }}
                         </td>
-                        @if ($rol_id !== 'estudiante')
+                        @if ($rol->rol_name !== 'estudiante')
                             <td class="px-6 py-4">
                                 <a href="{{ route('admin.usuarios.edit', $user) }}"
                                     class="font-medium text-green-600 dark:text-green-500 hover:underline text-2xl"><i

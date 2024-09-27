@@ -13,15 +13,14 @@ class AdminUsuarioController extends Controller
     public function index() {}
 
 
-    public function create(Request $request)
+    public function create()
     {
-        $rol_id = intval($request->query('rol'));
+        $rol_id = session('rol_id');
         return view('dashboard.pages.usuarios.create', compact('rol_id'));
     }
 
     public function store(Request $request)
     {
-
         // Validaciones
         $validatedData = $request->validate([
             'first_name' => 'required|string|max:255',
@@ -50,7 +49,7 @@ class AdminUsuarioController extends Controller
         // Encriptar la contraseña
         $validatedData['password'] = bcrypt($validatedData['password']);
 
-        $validatedData['rol_id'] = intval($request->query('rol_id'));
+        $validatedData['rol_id'] = session('rol_id');
 
         // Crear el usuario
         $user = User::create($validatedData);
@@ -63,22 +62,12 @@ class AdminUsuarioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $rol_id)
+    public function show(String $rol_name)
     {
-        $id = null;
-        switch ($rol_id) {
-            case "administrador":
-                $id = 1;
-                break;
-            case "instructor":
-                $id = 2;
-                break;
-            case "estudiante":
-                $id = 3;
-                break;
-        }
-        $users = User::where("rol_id", $id)->paginate(3);
-        return view("dashboard.pages.usuarios.show", compact("users", 'rol_id', 'id'));
+        $rol = Rol::where("rol_name", $rol_name)->firstOrFail();
+        session(['rol_id' => $rol->id]);
+        $users = User::where("rol_id", $rol->id)->paginate(5);
+        return view("dashboard.pages.usuarios.show", compact('users','rol'));
     }
 
     /**

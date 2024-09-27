@@ -24,6 +24,11 @@ class Section extends Model
         return $this->belongsTo(Course::class, 'course_id', 'id');
     }
 
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class, 'section_id', 'id');
+    }
+
     protected function sectionName(): Attribute
     {
         return Attribute::make(
@@ -31,5 +36,4 @@ class Section extends Model
             set: fn(string $value) => strtolower($value), // Al guardar, convierte todo a minúsculas
         );
     }
-
 }

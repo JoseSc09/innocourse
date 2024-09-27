@@ -9,7 +9,17 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $table = 'courses'; 
+    protected $table = 'courses';
+
+    protected $fillable = [
+        'image',
+        'title',
+        'slug',
+        'description',
+        'price',
+        'instructor_id',
+        'category_id',
+    ];
 
 
     // Relación con la tabla "users" (instructor -> usuario)
@@ -21,12 +31,20 @@ class Course extends Model
     // Relación con la tabla "categories"
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id', 'id'); 
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
     // Relación de un curso con muchas reviews
     public function reviews()
     {
-        return $this->hasMany(Review::class, 'course_id', 'id'); 
+        return $this->hasMany(Review::class, 'course_id', 'id');
+    }
+    public function sections()
+    {
+        return $this->hasMany(Section::class, 'course_id', 'id');
+    }
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

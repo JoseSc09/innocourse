@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Rol;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,7 @@ class SideBar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('dashboard.partials.side-bar');
+        $rols = Rol::all();
+        return view('dashboard.partials.side-bar',compact('rols'));
     }
 }
