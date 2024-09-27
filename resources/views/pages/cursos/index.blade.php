@@ -53,7 +53,7 @@
                     <img src="{{ asset($course->image) }}" alt="Imagen Curso {{$course->title}}">
                     <h2>{{ $course->title }}</h2>
                     <p>{{ $course->description }}</p>
-                    <div class="rating">
+                    <div class="my-2">
                         <x-star-rating :rating="$course->reviews_avg_rating" />
                     </div>
                     <div class="price">S/ {{ $course->price }}</div>
@@ -61,5 +61,6 @@
                 </div>
             @endforeach
         </div>
+        {{ $courses->links() }}
     </section>
 </x-app-layout>

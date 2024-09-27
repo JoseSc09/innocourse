@@ -7,4 +7,5 @@
     <p class="dark:text-gray-100">Profesor: {{$course->instructor->first_name . ' ' . $course->instructor->last_name}}</p>
     <p class="dark:text-gray-100">Username Profesor: {{'@'.$course->instructor->username}}</p>
     <p class="dark:text-gray-100">Email Profesor: {{$course->instructor->email}}</p>
+    <p class="dark:text-gray-100">Rating: <x-star-rating :rating="$course->reviews_avg_rating" /></p>
 </x-app-layout>
