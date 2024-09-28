@@ -1,14 +1,14 @@
 <x-dashboard-layout>
-    <h1 class="capitalize">
+    <h1 class="capitalize text-4xl font-medium dark:text-gray-50">
         {{ $rol->rol_name }}
     </h1>
     @if ($rol->rol_name !== 'estudiante')
-        <div class="mb-6">
-            <a href="{{ route('admin.usuarios.create') }}"
-                class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Añadir
-            </a>
-        </div>
+    <div class="w-24 my-6">
+        <a href="{{ route('admin.usuarios.create') }}"
+            class="block py-2.5 text-sm  text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
+            Añadir
+        </a>
+    </div>
     @endif
     <div
         class="relative overflow-x-auto shadow-md dark:border-2 dark:border-gray-500 sm:rounded-lg overflow-hidden overscroll-contain">
