@@ -2,7 +2,7 @@
     <section
         class="flex flex-col md:flex-row items-center justify-around py-12 bg-white border-b-2 border-gray-300 dark:bg-slate-800">
         <div class="content max-w-md md:max-w-xl text-left">
-            <h1 class="text-4xl font-bold mb-6">Cambia tu realidad,<br> aprende online en vivo</h1>
+            <h1 class="text-4xl font-bold mb-6 dark:text-gray-50">Cambia tu realidad,<br> aprende online en vivo</h1>
             <a href="{{ route('payments.index') }}"
                 class="signup-button inline-block px-6 py-3 bg-orange-400 text-black border-2 border-black rounded-full font-semibold transition hover:bg-orange-500">Inscribirme
                 ahora</a>
@@ -14,7 +14,8 @@
                     class="h-50 md:h-62 w-full rounded-lg border-2 border-black object-cover">
                 <div class="absolute top-10 left-3 lg:left-[-1.5rem] bg-black text-white p-2 rounded">
                     Jessica 15:31<br>Excelente clase!</div>
-                <div class="absolute top-12 right-3 lg:right-[-1.5rem] md:min-w-[10rem] bg-black text-white p-2 rounded text-sm w-28 text-center">
+                <div
+                    class="absolute top-12 right-3 lg:right-[-1.5rem] md:min-w-[10rem] bg-black text-white p-2 rounded text-sm w-28 text-center">
                     Juan 15:34<br>Hola profe!, tengo una consulta</div>
             </div>
             <div class="grid grid-cols-3 gap-2 mt-2">
@@ -27,7 +28,7 @@
             </div>
         </div>
     </section>
-
+    
     <section class="community-section text-center py-12 bg-white border-b-2 border-gray-300 dark:bg-slate-800">
         <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">Únete a nuestra comunidad online en vivo<br><span
                 class="text-orange-400">más grande de latinoamérica</span></h2>
@@ -42,12 +43,12 @@
             <div class="partner text-center">
                 <img src="{{ Vite::image($empresa['image']) }}" alt=""
                     class="w-28 h-20 mb-2 border-2 border-black rounded-lg dark:border-none">
-                <p>+{{ $empresa['graduates'] }} graduados</p>
+                <p class="dark:text-gray-50">+{{ $empresa['graduates'] }} graduados</p>
             </div>
         @endforeach
     </section>
 
-    <div class="cursos-section text-center py-12 bg-white border-gray-300 mx-4 md:mx-16 lg:mx-24 dark:bg-slate-800">
+    <div class="text-center py-12 bg-white border-gray-300 mx-4 md:mx-16 lg:mx-24 dark:bg-slate-800">
         <h2
             class="text-3xl font-bold mb-6 bg-purple-100 inline-block p-3 rounded-lg border border-black dark:border-none dark:text-gray-100 dark:bg-indigo-950">
             ¿Qué quieres
@@ -67,29 +68,26 @@
     </div>
 
 
-    <div class="info-section py-12 bg-white border-b-2 border-t-2 border-gray-300 dark:bg-slate-800">
-        <h2
-            class="text-left text-2xl md:text-4xl font-bold text-orange-400 leading-relaxed mb-6 ml-6 md:ml-16 lg:ml-24">
-            Somos la autoridad en maximizar <br>
-            la educación en línea <br>
-            en Latinoamérica
-        </h2>
-        <div class="info-grid grid grid-cols-1 md:grid-cols-2 gap-6 items-center ml-6 md:ml-16 lg:ml-24">
-            <div class="info-text space-y-4">
+    <div class="py-12 bg-white border-b-2 border-t-2 border-gray-300 dark:bg-slate-800">
+        <div class="flex mx-10 flex-col lg:flex-row justify-between items-center">
+            <div class="lg:min-w-[580px]">
+                <h2 class="text-2xl lg:max-w-2xl md:text-4xl font-bold text-orange-400 text-center mb-2">
+                    Somos la autoridad en maximizar la educación en línea en Latinoamérica
+                </h2>
                 @foreach ($features as $feature)
                     <p class="flex items-center gap-6 p-4 dark:text-gray-100"> <i
                             class="{{ $feature['icon'] }} fa-xl"></i>{{ $feature['content'] }}</p>
                 @endforeach
             </div>
-            <div class="info-img px-4 md:px-8 lg:px-9">
+            <div class="hidden lg:block">
                 <img src="{{ Vite::image('cursoInfo.jpg') }}" alt="Instructora dando clase en línea"
-                    class="w-full rounded-xl border-3 border-black">
+                    class="max-h-96 rounded-xl border-3 border-black">
             </div>
         </div>
     </div>
 
-    <div class="container mx-auto py-12 px-4">
-        <h1 class="text-center text-3xl font-bold mb-8">¡Elige una de nuestras promociones!</h1>
+    <div class="py-12 px-4">
+        <h1 class="text-center text-3xl font-bold mb-8 dark:text-gray-50">¡Elige una de nuestras promociones!</h1>
         <div class="promo-box-container flex flex-wrap justify-center">
             @foreach ($subscriptions as $subscription)
                 <div
@@ -118,7 +116,7 @@
         </div>
         <div class="signup-button-container text-center mt-8">
             <a href="{{ route('payments.index') }}"
-                class="signup-button inline-block px-6 py-3 bg-orange-400 text-black border-2 border-black rounded-full font-semibold transition hover:bg-orange-500">Inscribirme
+                class="signup-button inline-block px-6 py-3 bg-orange-400 hover:bg-orange-500 transition text-black border-2 border-black rounded-full font-semibold">Inscribirme
                 ahora</a>
         </div>
     </div>
