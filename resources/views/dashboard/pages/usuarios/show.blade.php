@@ -5,7 +5,7 @@
     @if ($rol->rol_name !== 'estudiante')
         <div class="w-24 my-6">
             <a href="{{ route('admin.usuarios.create') }}"
-                class="block py-2.5 text-sm  text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
+                class="block py-2.5 text-sm  text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
                 Añadir
             </a>
         </div>
