@@ -13,7 +13,17 @@ class AdminMembresiaController extends Controller
     public function index()
     {
         $subscriptions = Subscription::orderBy("created_at", "asc")->paginate(10);
-        return view("dashboard.pages.membresias.index", compact("subscriptions"));
+        $subscriptionsRows = $subscriptions->map(function ($subscription) {
+            return [
+                ['value' => $subscription->subscription_name],
+                ['value' => $subscription->course_count],
+                ['value' => 'S/ ' . $subscription->price,],
+                ['value' => $subscription->duration_months . ' meses'],
+                ['value' => $subscription->description],
+                ['edit_link' => route('admin.membresias.edit', $subscription)]
+            ];
+        });
+        return view("dashboard.pages.membresias.index", compact('subscriptions', 'subscriptionsRows'));
     }
 
     /**
@@ -56,7 +66,7 @@ class AdminMembresiaController extends Controller
     {
         // Encuentra la suscripción actual o lanza un error 404 si no se encuentra
         $subscription = Subscription::findOrFail($id);
-    
+
         // Validar los datos del formulario
         $validatedData = $request->validate([
             'course_count' => 'required|integer|min:1', // Número de cursos mínimo 1
@@ -65,10 +75,10 @@ class AdminMembresiaController extends Controller
             'duration_months' => 'required|integer|min:1|max:36', // Duración entre 1 y 36 meses
             'description' => 'nullable|string|max:2000', // Descripción opcional con máximo 2000 caracteres
         ]);
-    
+
         // Actualizar la suscripción con los datos validados
         $subscription->update($validatedData);
-    
+
         // Redirigir al usuario con un mensaje de éxito
         return redirect()->route('admin.membresias.index')->with('success', 'Suscripción actualizada con éxito.');
     }
