@@ -39,7 +39,7 @@ class AdminCategoriaController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'category_name' => 'required|string|min:5|max:255',
+            'category_name' => 'required|string|min:5|max:255|unique:categories,category_name',
         ]);
         Category::create($validatedData);
         return redirect()->route('admin.categorias.index')->with('success', 'Categoría creada con éxito');
@@ -58,7 +58,8 @@ class AdminCategoriaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::find($id);
+        return view('dashboard.pages.categorias.edit', compact('category'));
     }
 
     /**
@@ -66,7 +67,12 @@ class AdminCategoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $validatedData = $request->validate([
+            'category_name' => 'required|string|min:5|max:255|unique:categories,category_name,' . $category->id,
+        ]);
+        $category->update($validatedData);
+        return redirect()->route('admin.categorias.index')->with('success','Categoría actualizada');
     }
 
     /**
@@ -74,6 +80,8 @@ class AdminCategoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->route('admin.categorias.index')->with('success','');
     }
 }
