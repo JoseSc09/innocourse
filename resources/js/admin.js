@@ -68,12 +68,13 @@ hamburderButton.addEventListener('click', function () {
 // Input Change Avatar User
 const input = document.getElementById('image');
 const fileNameDisplay = document.getElementById('file_name');
-input.addEventListener('change', function () {
-    if (input.files.length > 0) {
-        const fileName = input.files[0].name;
-        fileNameDisplay.textContent = `Archivo seleccionado: ${fileName}`;
-    } else {
-        fileNameDisplay.textContent = "No se ha seleccionado ningún archivo";
-    }
-});
-
+if (input) {
+    input.addEventListener('change', function () {
+        if (input.files.length > 0) {
+            const fileName = input.files[0].name;
+            fileNameDisplay.textContent = `Archivo seleccionado: ${fileName}`;
+        } else {
+            fileNameDisplay.textContent = "No se ha seleccionado ningún archivo";
+        }
+    });
+}
