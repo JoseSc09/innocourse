@@ -12,8 +12,16 @@ class AdminSobreNosotrosController extends Controller
      */
     public function index()
     {
-        $about = About::orderBy("id", "asc")->paginate(10);
-        return view("dashboard.pages.sobre-nosotros.index", compact("about"));
+        $abouts = About::orderBy("id", "asc")->paginate(10);
+        $aboutsRows = $abouts->map(function ($about) {
+            return [
+                ['value' => $about->title],
+                ['value' => $about->text],
+                ['image' => asset($about->image)],
+                ['edit_link' => route('admin.sobre-nosotros.edit', $about)]
+            ];
+        });
+        return view("dashboard.pages.sobre-nosotros.index", compact("abouts", 'aboutsRows'));
     }
 
     /**
@@ -42,7 +50,7 @@ class AdminSobreNosotrosController extends Controller
      */
     public function edit(string $id)
     {
-        $about = About::find( $id );
+        $about = About::find($id);
         return view("dashboard.pages.sobre-nosotros.edit", compact("about"));
     }
 
