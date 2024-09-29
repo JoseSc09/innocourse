@@ -78,3 +78,26 @@ if (input) {
         }
     });
 }
+
+
+// Hacer que las funciones estén disponibles globalmente
+window.openModal = function (userId) {
+    const modal = document.getElementById('deleteModal');
+    const deleteForm = document.getElementById('deleteForm');
+
+    if (modal && deleteForm) {
+        // Mostrar el modal
+        modal.style.display = 'flex';
+
+        // Cambiar la acción del formulario para incluir el ID del usuario
+        deleteForm.action = `/dashboard/categorias/${userId}`;
+    }
+}
+
+window.closeModal = function () {
+    const modal = document.getElementById('deleteModal');
+    if (modal) {
+        // Ocultar el modal
+        modal.style.display = 'none';
+    }
+}
