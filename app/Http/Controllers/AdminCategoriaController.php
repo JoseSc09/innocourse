@@ -18,8 +18,10 @@ class AdminCategoriaController extends Controller
                 ['value' => $category->category_name],
                 [
                     'edit_link' => route('admin.categorias.edit', $category),
-                    'delete_link' => route('admin.categorias.destroy', $category)
-                ]
+                    'delete_link' => route('admin.categorias.destroy', $category),
+                    'id' => $category->id
+                ],
+                
             ];
         });
         return view("dashboard.pages.categorias.index", compact("categories", "categoriesRows"));
@@ -72,7 +74,7 @@ class AdminCategoriaController extends Controller
             'category_name' => 'required|string|min:5|max:255|unique:categories,category_name,' . $category->id,
         ]);
         $category->update($validatedData);
-        return redirect()->route('admin.categorias.index')->with('success','Categoría actualizada');
+        return redirect()->route('admin.categorias.index')->with('success', 'Categoría actualizada');
     }
 
     /**
@@ -82,6 +84,6 @@ class AdminCategoriaController extends Controller
     {
         $category = Category::findOrFail($id);
         $category->delete();
-        return redirect()->route('admin.categorias.index')->with('success','');
+        return redirect()->route('admin.categorias.index')->with('success', '');
     }
 }

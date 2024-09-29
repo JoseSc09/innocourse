@@ -9,5 +9,11 @@
         </a>
     </div>
     <x-admin-table :headers="['Nombre', 'Acción']" :rows="$categoriesRows" />
+
     {{ $categories->links() }}
+
+    {{-- Modal Para confirmar eliminacion --}}
+    <x-modal-confirmacion modalId="deleteModal" title="Confirmar eliminación"
+        message="¿Estás seguro que deseas eliminar este usuario?" />
+
 </x-dashboard-layout>
