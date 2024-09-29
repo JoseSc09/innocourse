@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class AdminCategoriaController extends Controller
@@ -11,7 +12,17 @@ class AdminCategoriaController extends Controller
      */
     public function index()
     {
-        return view("dashboard.pages.categorias.index");
+        $categories = Category::orderBy("created_at", "asc")->paginate(10);
+        $categoriesRows = $categories->map(function ($category) {
+            return [
+                ['value' => $category->category_name],
+                [
+                    'edit_link' => route('admin.categorias.edit', $category),
+                    'delete_link' => route('admin.categorias.destroy', $category)
+                ]
+            ];
+        });
+        return view("dashboard.pages.categorias.index", compact("categories", "categoriesRows"));
     }
 
     /**
@@ -19,7 +30,7 @@ class AdminCategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view("dashboard.pages.categorias.create");
     }
 
     /**
@@ -27,7 +38,11 @@ class AdminCategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'category_name' => 'required|string|min:5|max:255',
+        ]);
+        Category::create($validatedData);
+        return redirect()->route('admin.categorias.index')->with('success', 'Categoría creada con éxito');
     }
 
     /**
