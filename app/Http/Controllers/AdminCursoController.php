@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class AdminCursoController extends Controller
@@ -11,7 +12,8 @@ class AdminCursoController extends Controller
      */
     public function index()
     {
-        return view("dashboard.pages.cursos.index");
+        $courses = Course::orderBy("id", "asc")->paginate();
+        return view("dashboard.pages.cursos.index", compact('courses'));
     }
 
     /**
