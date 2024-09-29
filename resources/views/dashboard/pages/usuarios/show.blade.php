@@ -3,9 +3,9 @@
         {{ $rol->rol_name }}
     </h1>
     @if ($rol->rol_name !== 'estudiante')
-        <div class="w-24 my-6">
+        <div class="mt-6 2xl:max-w-[90%] 2xl:mx-auto">
             <a href="{{ route('admin.usuarios.create') }}"
-                class="block py-2.5 text-sm  text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
+                class="block w-24 py-2.5 text-sm  text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 ">
                 Añadir
             </a>
         </div>
