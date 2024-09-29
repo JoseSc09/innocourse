@@ -6,27 +6,20 @@
         @method('PUT')
         <div class="grid gap-4 mb-4 grid-cols-2">
             <div class="col-span-2 sm:col-span-1">
-                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                <input type="text" name="first_name" id="first_name" value="{{ $user->first_name }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                <x-input-field label="Nombre" type="text" name="first_name" id="first_name"
+                    value="{{ old('first_name', $user->first_name) }}" />
             </div>
             <div class="col-span-2 sm:col-span-1">
-                <label for="last_name"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido</label>
-                <input type="last_name" name="last_name" id="last_name" value="{{ $user->last_name }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                <x-input-field label="Apellido" type="text" name="last_name" id="last_name"
+                    value="{{ old('last_name', $user->last_name) }}" />
             </div>
             <div class="col-span-2">
-                <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre de
-                    usuario</label>
-                <input type="username" name="username" id="username" value="{{ $user->username }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                <x-input-field label="Nombre de usuario" type="text" name="username" id="username"
+                    value="{{ old('username', $user->username) }}" />
             </div>
             <div class="col-span-2">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                <input type="email" name="email" id="email" placeholder="example@mail.com"
-                    value="{{ $user->email }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                <x-input-field label="Email" type="email" name="email" id="email"
+                    placeholder="example@mail.com" value="{{ old('email', $user->email) }}" />
             </div>
             <div class="col-span-2 flex gap-5 items-center">
                 <img class="w-36 h-36 rounded-full object-cover" src="{{ asset($user->image) }}" alt="">
@@ -52,7 +45,7 @@
         </div>
 
         <button type="submit"
-            class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            class="text-white inline-flex items-center bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700">
             Guardar
         </button>
 
