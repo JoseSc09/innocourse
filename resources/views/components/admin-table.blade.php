@@ -14,7 +14,7 @@
                 <tr
                     class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                     @foreach ($row as $cell)
-                        <td class="px-6 py-4 {{ isset($cell['delete_link']) != null ? 'flex gap-6' :'' }}">
+                        <td class="px-6 py-4 {{ isset($cell['delete_link']) != null ? 'flex gap-6' : '' }}">
                             <p class=" line-clamp-4">
 
                                 @if (isset($cell['avatar']))
@@ -26,19 +26,15 @@
                                 @elseif (isset($cell['edit_link']) || isset($cell['delete_link']))
                                     @if (isset($cell['edit_link']))
                                         <a href="{{ $cell['edit_link'] }}"
-                                            class="font-medium text-green-600 dark:text-green-500 hover:underline text-2xl">
+                                            class="font-medium text-green-600 dark:text-green-500 text-2xl">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     @endif
                                     @if (isset($cell['delete_link']))
-                                        <form class="" action="{{ $cell['delete_link'] }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button
-                                                class="font-medium text-red-600 dark:text-red-500 hover:underline text-2xl">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
+                                        <button onclick="openModal({{ $cell['id'] }})"
+                                            class="font-medium text-red-600 dark:text-red-500 text-2xl">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
                                     @endif
                                 @else
                                     {{ $cell['value'] }}
@@ -51,3 +47,4 @@
         </tbody>
     </table>
 </div>
+
