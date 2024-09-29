@@ -53,7 +53,7 @@ class AdminUsuarioController extends Controller
 
         // Crear el usuario
         $user = User::create($validatedData);
-        
+
 
         // Redirigir con un mensaje de éxito
         return redirect("/dashboard/usuarios/{$user->rol->rol_name}");
@@ -67,7 +67,17 @@ class AdminUsuarioController extends Controller
         $rol = Rol::where("rol_name", $rol_name)->firstOrFail();
         session(['rol_id' => $rol->id]);
         $users = User::where("rol_id", $rol->id)->paginate(5);
-        return view("dashboard.pages.usuarios.show", compact('users','rol'));
+        $usersRows = $users->map(function ($user) {
+            return [
+                ['avatar' => asset($user->image)],
+                ['value' => $user->first_name],
+                ['value' => $user->last_name],
+                ['value' => $user->username],
+                ['value' => $user->email],
+                ['edit_link' => route('admin.usuarios.edit', $user)]
+            ];
+        });
+        return view("dashboard.pages.usuarios.show", compact('usersRows', 'rol', 'users'));
     }
 
     /**
