@@ -19,7 +19,7 @@ class AdminCategoriaController extends Controller
                 [
                     'edit_link' => route('admin.categorias.edit', $category),
                     'delete_link' => route('admin.categorias.destroy', $category),
-                    'id' => $category->id
+                    'routeDelete' => '/dashboard/categorias/'.$category->id
                 ],
                 
             ];
