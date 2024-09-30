@@ -53,7 +53,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-B88Sd_Pb.css",
+    "file": "assets/app-COHySyQW.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -126,7 +126,7 @@
     "src": "resources/images/yapeplin.png"
   },
   "resources/js/admin.js": {
-    "file": "assets/admin-CxX5Jeu4.js",
+    "file": "assets/admin-x9RQ8FsS.js",
     "name": "admin",
     "src": "resources/js/admin.js",
     "isEntry": true,
