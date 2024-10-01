@@ -81,7 +81,7 @@ if (input) {
 
 
 // Hacer que las funciones estén disponibles globalmente
-window.openModal = function (userId) {
+window.openModal = function (route) {
     const modal = document.getElementById('deleteModal');
     const deleteForm = document.getElementById('deleteForm');
 
@@ -90,7 +90,7 @@ window.openModal = function (userId) {
         modal.style.display = 'flex';
 
         // Cambiar la acción del formulario para incluir el ID del usuario
-        deleteForm.action = `/dashboard/categorias/${userId}`;
+        deleteForm.action = route;
     }
 }
 
@@ -101,3 +101,143 @@ window.closeModal = function () {
         modal.style.display = 'none';
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Acordeón
+    const buttons = document.querySelectorAll('.toggle-section');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const sectionId = this.getAttribute('data-section');
+            const sectionContent = document.getElementById(sectionId);
+
+            // Alternar entre mostrar y ocultar el contenido con una transición suave
+            if (sectionContent.style.maxHeight) {
+                sectionContent.style.maxHeight = null;
+            } else {
+                sectionContent.style.maxHeight = sectionContent.scrollHeight + "px";
+            }
+        });
+    });
+
+    // Modal
+    const openModalButtons = document.querySelectorAll('.open-modal');
+    const modal = document.getElementById('lessonModal');
+    const modalTitle = document.getElementById('modalLessonTitle');
+    const modalImage = document.getElementById('modalLessonImage');
+    const closeModal = document.getElementById('closeModal');
+
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const lessonTitle = this.getAttribute('data-lesson');
+            const lessonImageUrl = this.getAttribute('data-content');
+
+            // Mostrar el modal con la información de la lección
+            modalTitle.textContent = lessonTitle;
+            modalImage.src = lessonImageUrl;
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';  // Establecer display en flex para centrar el modal
+        });
+    });
+
+    if (closeModal) {
+        closeModal.addEventListener('click', function () {
+            modal.classList.add('hidden');
+            modal.style.display = 'none';  // Ocultar el modal al cerrar
+        });
+    }
+
+    // Cerrar modal al hacer clic fuera del contenido modal
+    window.addEventListener('click', function (event) {
+        if (event.target == modal) {
+            modal.classList.add('hidden');
+            modal.style.display = 'none';  // Ocultar el modal al cerrar
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sectionsContainer = document.querySelector('#sections-container');
+    let sectionIndex = document.querySelectorAll('.section').length;
+    const sectionsToDeleteInput = document.getElementById('sections_to_delete');
+    const lessonsToDeleteInput = document.getElementById('lessons_to_delete');
+    let sectionsToDelete = [];
+    let lessonsToDelete = [];
+
+    // Función para agregar una nueva sección
+    const addSection = () => {
+        const sectionHTML = `
+            <div class="mb-4 section border-b-2 dark:border-gray-500 border-gray-400">
+                <div class="mb-2">
+                    <label for="sections[${sectionIndex}][section_name]"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre de la Sección</label>
+                    <input type="text" name="sections[${sectionIndex}][section_name]" id="sections[${sectionIndex}][section_name]"
+                        class="block w-full p-2.5 border rounded-lg text-sm text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-600 border-gray-300 dark:border-gray-500">
+                </div>
+                <div class="lessons-container"></div>
+                <button type="button"
+                    class="add-lesson py-2.5 text-sm px-5 mb-2.5 text-white bg-yellow-500 hover:bg-yellow-600 font-medium rounded-lg dark:bg-yellow-500 dark:hover:bg-yellow-600">Agregar Lección</button>
+                <button type="button" class="delete-section py-2 px-3 mt-2 text-red-600 hover:text-red-700">Eliminar Sección</button>
+            </div>
+        `;
+        sectionsContainer.insertAdjacentHTML('beforeend', sectionHTML);
+        sectionIndex++;
+    };
+
+    // Función para agregar una nueva lección
+    const addLesson = (event) => {
+        const lessonsContainer = event.target.previousElementSibling;
+        const lessonIndex = lessonsContainer.querySelectorAll('.flex').length;
+
+        const lessonHTML = `
+            <div class="flex gap-8 my-2 items-center">
+                <label for="sections[${sectionIndex}][lessons][${lessonIndex}][lesson_name]"
+                    class="block min-w-16 text-sm font-medium text-gray-900 dark:text-white">Lección</label>
+                <input type="text" name="sections[${sectionIndex}][lessons][${lessonIndex}][lesson_name]"
+                    id="sections[${sectionIndex}][lessons][${lessonIndex}][lesson_name]"
+                    class="block w-full p-2.5 border rounded-lg text-sm text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-600 border-gray-300 dark:border-gray-500">
+                <button type="button" class="delete-lesson py-2 px-3 text-red-600 hover:text-red-700">Eliminar</button>
+            </div>
+        `;
+        lessonsContainer.insertAdjacentHTML('beforeend', lessonHTML);
+    };
+
+    // Función para eliminar una sección
+    const deleteSection = (event) => {
+        const sectionDiv = event.target.closest('.section');
+        const sectionId = sectionDiv.getAttribute('data-section-id');
+        if (sectionId) {
+            sectionsToDelete.push(sectionId);
+            sectionsToDeleteInput.value = sectionsToDelete.join(',');
+        }
+        sectionDiv.remove();
+    };
+
+    // Función para eliminar una lección
+    const deleteLesson = (event) => {
+        const lessonDiv = event.target.closest('.flex');
+        const lessonId = lessonDiv.getAttribute('data-lesson-id');
+        if (lessonId) {
+            lessonsToDelete.push(lessonId);
+            lessonsToDeleteInput.value = lessonsToDelete.join(',');
+        }
+        lessonDiv.remove();
+    };
+
+    // Event listeners
+    const addSectionButton = document.querySelector('#add-section');
+    if (addSectionButton) {
+        addSectionButton.addEventListener('click', addSection);
+    }
+    if (sectionsContainer) {
+        sectionsContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('add-lesson')) {
+                addLesson(event);
+            } else if (event.target.classList.contains('delete-section')) {
+                deleteSection(event);
+            } else if (event.target.classList.contains('delete-lesson')) {
+                deleteLesson(event);
+            }
+        });
+    }
+});

@@ -88,7 +88,7 @@
 
     <div class="py-12 px-4">
         <h1 class="text-center text-3xl font-bold mb-8 dark:text-gray-50">¡Elige una de nuestras promociones!</h1>
-        <div class="promo-box-container flex flex-wrap justify-center">
+        <div class="flex flex-wrap justify-center">
             @foreach ($subscriptions as $subscription)
                 <div
                     class="promo-box w-full sm:w-80 p-6 m-4 rounded-lg shadow-lg bg-gray-50 dark:bg-[rgb(45,45,80)] border border-gray-200 dark:border-none">

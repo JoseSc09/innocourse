@@ -17,7 +17,7 @@ class LessonFactory extends Factory
     {
         return [
             'lesson_name' => $this->faker->words(3, true),
-            'content' => $this->faker->paragraphs(3, true),
+            'content' => 'storage/videos/courses/video_default.jpg',
             'section_id' => Section::factory(), // Relación con la tabla de secciones
         ];
     }

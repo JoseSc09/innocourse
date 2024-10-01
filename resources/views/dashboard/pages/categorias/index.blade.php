@@ -14,6 +14,6 @@
 
     {{-- Modal Para confirmar eliminacion --}}
     <x-modal-confirmacion modalId="deleteModal" title="Confirmar eliminación"
-        message="¿Estás seguro que deseas eliminar este usuario?" />
+        message="¿Estás seguro que deseas eliminar esta categoría?" />
 
 </x-dashboard-layout>

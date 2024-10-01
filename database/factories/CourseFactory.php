@@ -17,7 +17,7 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => 'storage/images/courses/java_script.jpg',
+            'image' => 'storage/images/courses/img_course_default.jpg',
             'title' => $this->faker->sentence,
             'slug' => $this->faker->slug,
             'description' => $this->faker->paragraph,
